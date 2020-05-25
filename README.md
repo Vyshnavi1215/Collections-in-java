@@ -59,6 +59,54 @@ Differences
  4.only homogeneous data                                                   4.holds both homogeneous and heterogeneous data
  5.readymade method support is not available                               5. readymade methods are available(ex-to find the elemnts)
  6.Arrays can be used to store primitive and objects                       6.Collections store only objects
+ 
+ 
+ Collection and Collection Framework--
+ 
+ Collection is a group of individual objects represented as a single entity.
+ 
+ What is collection framework ??
+ 
+ It defines several classes and interfaces which are used to define a collection.
+ 
+ Collection is not new concepts, it is alo there in other languages
+ 
+ In java it is collection and in C++ it is Container
+ Java- Collection framework and in C++ STL(Standard Template Library).[Library means a group of classes and interfaces].
+ 
+ 
+ 9 Key interfaces in Collection Framework --
+ 
+ First is collection
+ 
+ 1.Collection-defines the most common methods applicable for all the the collections like addd, isempty etc.
+ 2.In general collection interface is considered as the root interface for collection.
+ 
+ Note : There is no concrete class that implements the collection interface directly.
+ 
+ Diff between Collection and Collections :
+ 
+ 
+Collection - interface, collections -class, this will have pre defined methods to work on collections
+
+For example think of an arraylist we cdont have any method to sort which means its not defined in arraylist.
+
+but we can use as Collections.sort(ArrayList) to sort it.
+
+This is present in java.util.package.
+
+Second - List
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 
 
