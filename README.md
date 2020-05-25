@@ -77,7 +77,7 @@ Differences
  
  9 Key interfaces in Collection Framework --
  
- First is collection
+ First Interface is collection
  
  1.Collection-defines the most common methods applicable for all the the collections like addd, isempty etc.
  2.In general collection interface is considered as the root interface for collection.
@@ -95,7 +95,69 @@ but we can use as Collections.sort(ArrayList) to sort it.
 
 This is present in java.util.package.
 
-Second - List
+Second Interface - List.(1.2)
+
+1.duplicates are allowed.
+2.Insertion order to be preserved.
+
+Implementation classes of List are ArrayList(1.2), LinkedList(1.2), Vector[1.0] and Stack[1.0](Vector and stack are called as Legacy classes as they exist from 1.0) All others are from 1.2V(Collection, List,ArrayList,LinkedList)
+
+The classes that exists from older versions are called as Legacy classes.
+
+Third Interface is Set(1.2)
+
+1.Duplicates are not allowed.
+2.Insertion not preserved
+
+Implementation classes Hashset(1.2V) and LinkedHashset(1.4V)
+
+
+Diff between List and Set
+
+List 0dupicates are not allowed, Set-not allowed.
+List-Insertion order preserved, Set-not preserved.
+
+Fourth Interface -Sorted set(1.2V)
+
+This is the child interface of Set(1.2V), when there is a requirement in which the duplicates are not allowed and insertion order need to be preserved then we go for Sortedset.
+
+Fifth Interface -Navigable Set(1.6V)
+It is the child interface of Sorted Set and it defines many navigation methods.
+
+Implementation of the Navigable set is Treeset(1.2V)
+
+Sixth Interface is Queue(1.5)--
+
+Child classes are Priority Queue(1.5V) and Blocking Queue(1.5V) and Blocking Queue have two more implementation classes
+
+Linked Blocking Queue(1.5V) and Priority Blocking Queue(1.5)
+
+Queue is best used when we need to do any operation in First In First Out Order.
+
+If we want to represent a group of objects as Key value pairs then we got for Map Interface.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
