@@ -122,23 +122,33 @@ Fourth Interface -Sorted set(1.2V)
 This is the child interface of Set(1.2V), when there is a requirement in which the duplicates are not allowed and insertion order need to be preserved then we go for Sortedset.
 
 Fifth Interface -Navigable Set(1.6V)
-It is the child interface of Sorted Set and it defines many navigation methods.
+It is the child interface of Sorted Set and it defines several navigation methods.
 
 Implementation of the Navigable set is Treeset(1.2V)
 
-Sixth Interface is Queue(1.5)--
+Sixth Interface is Queue(1.5V)--
 
-Child classes are Priority Queue(1.5V) and Blocking Queue(1.5V) and Blocking Queue have two more implementation classes
+Implementation classes of Queue are Priority Queue(1.5V) and Blocking Queue(1.5V) and Blocking Queue have two more implementation classes
 
-Linked Blocking Queue(1.5V) and Priority Blocking Queue(1.5)
+Linked Blocking Queue(1.5V) and Priority Blocking Queue(1.5V)
+
+Note - All the above collection Interfaces are used to represent as group of  individual objects 
 
 Queue is best used when we need to do any operation in First In First Out Order.
 
 If we want to represent a group of objects as Key value pairs then we got for Map Interface.
 
+Seventh Interface -Map
 
+Map is not the child interface of collections-
 
+Omplementation classes
 
+Map(1.2V)                                                                      HashTable comes from Dictionary.
+/                          \                      \                       \  ||
+HaslMap (1.2V)       WeakHashMap(1.2V)         IdentityHashMap(1.4V)       Hashtable
+/                                                                              |
+Linked Has Map(1.4V)                                                         child class of Hashtable is properties 
 
 
 
