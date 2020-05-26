@@ -138,6 +138,9 @@ Queue is best used when we need to do any operation in First In First Out Order.
 
 If we want to represent a group of objects as Key value pairs then we got for Map Interface.
 
+
+05/26
+
 Seventh Interface -Map
 
 Map is not the child interface of collections-
@@ -145,10 +148,32 @@ Map is not the child interface of collections-
 Omplementation classes
 
 Map(1.2V)                                                                      HashTable comes from Dictionary.
-/                          \                      \                       \  ||
+|                         \                      \                       \      |
 HaslMap (1.2V)       WeakHashMap(1.2V)         IdentityHashMap(1.4V)       Hashtable
-/                                                                              |
+|                                                                              |
 Linked Has Map(1.4V)                                                         child class of Hashtable is properties 
+
+
+Dictionay HashTable and Properties classes are fom version 1.0 and so they are called as Legacy classes.
+
+
+Eighth Interface Sorted Map(1.2V)
+
+
+child interface of Map-
+
+This is mainly used when we want to represent a group of objects as key value pairs according to some sorting order then we go for Sorted Map.
+
+
+Ninth Interface -
+
+Navigable Map(1.6V)--
+
+child interface of sortedmap
+
+It defines several utility methods for navigation purpose.Implementation of navigable map is tree map(1.2V) -
+
+
 
 
 
