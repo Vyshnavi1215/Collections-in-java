@@ -6,7 +6,7 @@ Collection framework in java
 
 Need of Collections in java:
 
-Think of situation where we need to store 10000 values, we cannot go for variable declaration approach asit reduces readabilty and its not a good practice to declare more varaibles.
+Think of situation where we need to store 10000 values, we cannot go for variable declaration approach as it reduces readabilty and its not a good practice to declare more variables.
 
 Hence we go for Array approach.In array we can store all the values by defining a single variable.
 
@@ -53,10 +53,10 @@ Differences
 
 
                Arrays                                                           Collections
- 1. Fixed in size                                                          1. Grpwable in nature.
+ 1. Fixed in size                                                          1. Growable in nature.
  2.Arrays are not good for Memory management                               2.Collections are good for memory management.
  3.Performance wise this is good                                           3.Not good by performance wise.
- 4.only homogeneous data                                                   4.holds both homogeneous and heterogeneous data
+ 4.holds only homogeneous data                                             4.holds both homogeneous and heterogeneous data
  5.readymade method support is not available                               5. readymade methods are available(ex-to find the elemnts)
  6.Arrays can be used to store primitive and objects                       6.Collections store only objects
  
@@ -69,9 +69,10 @@ Differences
  
  It defines several classes and interfaces which are used to define a collection.
  
- Collection is not new concepts, it is alo there in other languages
+ Collection is not a new concept, it is alo there in other languages
  
  In java it is collection and in C++ it is Container
+ 
  Java- Collection framework and in C++ STL(Standard Template Library).[Library means a group of classes and interfaces].
  
  
@@ -89,7 +90,7 @@ Differences
  
 Collection - interface, collections -class, this will have pre defined methods to work on collections
 
-For example think of an arraylist we cdont have any method to sort which means its not defined in arraylist.
+For example think of an arraylist we dont have any method to sort which means it is not defined in arraylist.
 
 but we can use as Collections.sort(ArrayList) to sort it.
 
@@ -114,7 +115,7 @@ Implementation classes Hashset(1.2V) and LinkedHashset(1.4V)
 
 Diff between List and Set
 
-List 0dupicates are not allowed, Set-not allowed.
+List-0dupicates are allowed, Set-not allowed.
 List-Insertion order preserved, Set-not preserved.
 
 Fourth Interface -Sorted set(1.2V)
@@ -136,6 +137,12 @@ Note - All the above collection Interfaces are used to represent as group of  in
 
 Queue is best used when we need to do any operation in First In First Out Order.
 
+Before processing if we want to represent a group of individual objects, then we go for Queue.
+
+For example consider a message to be sent for 100 people then the recepients should be stored in prior before sending then we can use
+
+Queue interface.
+
 If we want to represent a group of objects as Key value pairs then we got for Map Interface.
 
 
@@ -149,9 +156,9 @@ Omplementation classes
 
 Map(1.2V)                                                                      HashTable comes from Dictionary.
 |                         \                      \                       \      |
-HaslMap (1.2V)       WeakHashMap(1.2V)         IdentityHashMap(1.4V)       Hashtable
+HashMap (1.2V)       WeakHashMap(1.2V)         IdentityHashMap(1.4V)       Hashtable
 |                                                                              |
-Linked Has Map(1.4V)                                                         child class of Hashtable is properties 
+Linked HashMap(1.4V)                                                         child class of Hashtable is properties 
 
 
 Dictionay HashTable and Properties classes are fom version 1.0 and so they are called as Legacy classes.
@@ -171,7 +178,37 @@ Navigable Map(1.6V)--
 
 child interface of sortedmap
 
-It defines several utility methods for navigation purpose.Implementation of navigable map is tree map(1.2V) -
+It defines several utility methods for navigation purpose.Implementation of navigable map is tree map(1.2V) 
+
+
+05/29-
+
+Overview of collection framework
+
+What is the difference between comparable and comparator?
+
+Comparable meant for default sorting order.
+
+Comparator meant for customised sorting order.
+
+To get the collection objects one by one we have some interfaces.
+
+Cursors is the concept.
+
+How many cursors are there in java?
+
+Enumeration
+Iterator
+ListIterator
+
+All the above are used to get the collection objects one by one.
+
+Utility classes-
+
+1.Collections -defines serveral utility methods for collection object.
+2.Arrays - defines several utility methods for Arrays object.
+
+
 
 
 
