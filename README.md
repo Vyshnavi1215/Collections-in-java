@@ -302,6 +302,18 @@ onnce after sending the object the reciever takes it and creates an exact copy o
 hence every collection class implements cloneable interface.
 
 
+ArrayList and Vector collection classes implements RandaomAccess Interface.
+
+with this the data in that particular index can be obtained very soon.
+
+If our frequent operation is retrieval then we can go for ArrayList..
+
+
+RandomAccess-
+
+it is a marker interface and doesn't contain any methods
+
+
 
 
 
