@@ -236,6 +236,82 @@ To iterate all the objects in the collection use Iterator which returns the iter
 
 ✔Collection interface doen't contain any method to retrieve objects as ther is no concrete class which implements the colletion class directly.
 
+List Interface-
+
+List is child interface of collection.
+index play an important role in List.
+
+Index -used to differentiate the duplicates and to preserve the insertion order.
+
+methods specific to list interface.
+
+To add an element at particular index- add(int index, Object o)
+To add group of objects from a specified index addAll(int index Collection c)
+To remove an element at a particular index- remove(int index)
+To find a particular element in the list.indexOf(Object o)
+To find the last occurence of that particular element in the lsit-list.lastIndexOf(Object o)
+To iterate the list we use ListIterator()
+
+To get the value at particular index get(int index)
+To replace the element at the specified index- set(int index, Object o).
+
+From the above we can notice that list interface have its own methods in addition to the methods that are getting from the collection.
+
+Index play very important role in list interface.
+  
+Implementation classes of List--
+
+ArrayList-
+
+Main features of ArrayList--
+->underlying data structure for arraylist - resizable or growable array.
+->insertion order is preserved.
+->duplicates are allowed.
+->heterogeneous objects are allowed.
+-> null insertion is also allowed.
+
+
+heterogeneous objects are allowed in collection except in Treeset and TreeMap-this is because in this collection classes the objects are stored in sorting order.
+also, to sort any object, the other should be of same type.hencce heterogeneous objects are not allowed in treeset and treemap.
+
+
+Constructors-
+
+1.ArrayList al = new ArrayList();\
+
+whenever we create a arraylist its default capacity is 10.
+but if we add 11th element then the compiler will create the new capacity arraylist by copying all the elements from the initially created arraylist and the old arraylist will be moved to garbage collection.
+
+coming to the size of newly created arraylist- capacity is calculated as - current (capacity *3/2)+1
+
+2.ArrayList al = ne ArrayList(int initialcapacity)
+
+with the first constructor, if the sixe increases based on requirement the processing will be too lsow, since all the elements have to be copied to the newly created list.
+
+but  if we know the capacity in prior then we can use this second constructor with initial capacity.
+
+3.if we want to convert any collection object to arraylist then we can use this.
+
+ArrayList al = new ArrayList(Collection c)
+
+
+purpose of collection- to hold the objects and transfer the objects accross the network.
+first to transfer the object it must be serialized, so every collection class by default use serializable interface.
+onnce after sending the object the reciever takes it and creates an exact copy of the object - which is called cloning because if anything happens to the recieved object then it cannot be regained.so cloning is must.
+
+hence every collection class implements cloneable interface.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
