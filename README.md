@@ -209,6 +209,38 @@ Utility classes-
 2.Arrays - defines several utility methods for Arrays object.
 
 
+05/30--
+
+
+Collection framework-Collection Interface
+
+In the collection interface we will have the most common methods applicable for any collection object.
+
+add(Object o) -this is used whenever we need to add an object from the collection.
+addAll(Collection c) - this is used to add the group of objects from the collection.
+remove(Object o) - this is used whenever we need to remove an object from the collection.
+removeAll(Collection c)-this is used to remove the group of objects from the collection.
+clear() - to remove the entire objects in collection.
+retailAll(Collection c)-Except a group of objects all the other objects are to be removed then we should use retainAll() method.
+
+To check whether the collection is empty or not then we should use isEmpty().
+To get the size of the collection - size().
+To check whether a particular object is available or not in that collection - contains(Object o).
+To check whether a group of particular objects are available or not -containsAll(Collection c).
+
+Coverting a collection to array().
+
+Object a[] =c.toArray().
+
+To iterate all the objects in the collection use Iterator which returns the iterator object.
+
+✔Collection interface doen't contain any method to retrieve objects as ther is no concrete class which implements the colletion class directly.
+
+
+
+
+
+
 
 
 
