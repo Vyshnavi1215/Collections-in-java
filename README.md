@@ -314,6 +314,12 @@ RandomAccess-
 it is a marker interface and doesn't contain any methods
 
 
+ArrayList is the best choice if our frequent operation is retrieval.
+
+but if our operations are adding in middle or removing an element arraylist doen't suit, as it lags performance.
+
+
+
 
 
 
