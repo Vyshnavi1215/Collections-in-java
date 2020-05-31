@@ -415,7 +415,20 @@ but if we dont want all the memory locations we can specify the increment value 
 
 Vector v = new Vector(int initialcapacity, int incremental capacity)
 
-Vector v= new Vector(Collection c)<-- to convert any collection class to vector--
+Vector v= new Vector(Collection c)<-- to convert any collection class to vector
+
+Stack class--
+
+This is the child class of vector class
+
+This is specially designed for last in first out (LIFO) order.
+
+Constructor-
+
+Stack s = new Stack();
+
+Methods of stack--
+
 
 
 
