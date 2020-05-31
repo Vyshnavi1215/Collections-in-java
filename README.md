@@ -318,6 +318,18 @@ ArrayList is the best choice if our frequent operation is retrieval.
 
 but if our operations are adding in middle or removing an element arraylist doen't suit, as it lags performance.
 
+05/31-
+
+Differences between arraylist and vector
+
+->Arraylist methods are non-synchronised whereas vector methods are sunchronised.
+->Array is not threadsafe, vector is thread safe.
+->performance is good in arraylist, but low in vector.
+->ArrayList is non legacy class, as it is introduced in 1.2 and Vector is legacy class as it is introduced in 1.0
+
+How to get synchronised version of ArrayList-
+
+
 
 
 
