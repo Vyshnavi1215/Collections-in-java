@@ -429,6 +429,52 @@ Stack s = new Stack();
 
 Methods of stack--
 
+push(Object o) - to insert an element into stack
+
+pop()- to remove and return the top of the stack.
+
+peek() - to return the top of the stack without removing the element
+
+empty()-to check whether the stack is empty
+
+search()- to search an element in the stack and this returns offset--
+
+now what is offset??
+
+consider a stack with three elements
+
+✔ C -1
+✔ B -2
+✔ A -3
+
+In the above stack if we perform search as search of A
+
+search("A") -it returns 3
+search("Z") - it returns -1
+
+so when the element is not found it returns -1
+
+offset means a value in general
+
+Cursors in Java--If we want to retrieve objects deom collection one by one then we should go for cursors in Java.
+
+There are three cursors in java
+
+1.Enumeration
+2.Iterator
+3.ListIterator
+
+1.Enumeration -
+
+
+
+
+
+
+
+
+
+
 
 
 
