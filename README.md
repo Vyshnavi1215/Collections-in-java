@@ -277,7 +277,7 @@ also, to sort any object, the other should be of same type.hencce heterogeneous 
 
 Constructors-
 
-1.ArrayList al = new ArrayList();\
+1.ArrayList al = new ArrayList();
 
 whenever we create a arraylist its default capacity is 10.
 but if we add 11th element then the compiler will create the new capacity arraylist by copying all the elements from the initially created arraylist and the old arraylist will be moved to garbage collection.
