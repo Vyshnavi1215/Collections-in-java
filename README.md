@@ -329,6 +329,103 @@ Differences between arraylist and vector
 
 How to get synchronised version of ArrayList-
 
+we have a method in collections class to make the arraylist as syncronized.
+
+ArrayList al= new ArrayList();
+
+To make it as synchronized-
+
+List l1=Collections.synchronisedList(al);
+
+this will give us the synchronised arraylist.
+
+public static List synchronizedList(List al).
+
+similarly we can get the synchronised version of map and set like above.
+
+public static Set synchronizedSet(set s)
+public static Map synchronizedMap(Map m)
+
+LinkedList-
+
+second interface class of collections-
+
+If the main requirement is to add/remove the elements then we can go for linkedList. if our frequent operation is retrieval it is not the best option.
+
+properties-
+1.Underlying Data structure is Doubly Linked List.
+2.Insertion order is preserved.
+3.Duplicates are allowed.
+4.Null values are allowed.
+5.Heterogeneous data types are allowed.
+
+This implements both serializable and cloneable interfaces.
+
+LinkedList used to implement stacks and queues.
+
+To implement these LinkedList have 6 methods which are used only in LinkedList class but not anywhere.
+
+void addFirst(Object o)
+void addLast(Object o)
+Object getFirst()
+Object getLast()
+Object removeFirst()
+Object removeLast()
+
+Constructors-
+
+->LinkedList l1= new LinkedList();
+
+-> to allow the inter conversion from one collection to other collection--
+
+Linkedlist L1 = new LinkedList(Collection c)
+
+set method is used to replace.
+
+Differences between ArrayList and LinkedList--
+
+arraylist underlying data structure - resizeable or growable array, Linked List-underlying data structure- double linked list.
+
+
+Vector class-
+
+Vector is synchronised, which is thread safe
+
+Vector methods-
+
+to add the element -addElement(Object O)
+
+to remove the element -removeElement(Object o) , removeAllElements(),removeElementsAt(int Index)
+
+to retrieve elements - Object elementAt(int index),Object get(int index),Object FirstElement(),Object LastElement()
+
+Constructors--
+
+default initial capacity is 10
+
+Vector  v = new Vector();
+
+Vector v = new Vector(100) ;-specify the capacity as per our need.
+
+if we have 101st element the capcity will increase as below.
+
+new capacity = 2* current capcity--
+
+but if we dont want all the memory locations we can specify the increment value as per our need.
+
+Vector v = new Vector(int initialcapacity, int incremental capacity)
+
+Vector v= new Vector(Collection c)<-- to convert any collection class to vector--
+
+
+
+
+
+
+
+
+
+
 
 
 
