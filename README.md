@@ -466,6 +466,21 @@ There are three cursors in java
 
 1.Enumeration -
 
+06/01
+
+Enumeration-
+
+Enumeration can be created by using elements of vector class.
+
+Enumeration e =v.elements();
+
+Methods-
+
+public boolean hasMoreElements()
+public Object nextElement()
+
+
+
 
 
 
