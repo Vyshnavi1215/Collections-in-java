@@ -479,6 +479,84 @@ Methods-
 public boolean hasMoreElements()
 public Object nextElement()
 
+06/02--
+Iterator-
+
+Enumeration-Applicable for legacy classes only and not an universal cursor, can perform only read operation
+
+Iterator is universal cursor and can be performed on any collection class, by using iterator we can perform both read and remove operations
+
+we can create iterator obbject by using the methods of collection interface.
+
+public Iterator iterator();
+
+Iterator itr= c.iterator();
+
+where c is any collection object
+
+Methods of Ierator-
+
+public boolean hasNext();
+
+public Object next();
+
+public void remove();
+
+Limitations--
+
+Forward direction cursors- only next elements will be checked.
+
+only read and remove, no replace operations
+
+ListIterator--
+
+this is a bidirectional cursor.
+
+by using this we can read, remove, replace or add new items as well.
+
+this is the child interface of Iterator-
+
+how to get the listIterator object--
+
+public ListIterator listIterator();
+
+
+Example - ListIterator ltr =l.listIterator();
+
+where l is any list object
+
+
+This has 9 methods--
+
+Forward Direction
+
+public boolean hasNext();
+public Object next();
+public int nextIndex();
+
+Backward Direction --
+
+public boolean hasPrevious();
+public Object previous();
+public int nextPrevious();
+
+Other methods --
+
+public voud remove();
+public void set(Object obj);
+public void add(Object new);
+
+
+Limitation - applicable for only for list objects and not the universal cursor.
+
+
+
+
+
+
+
+
+
 
 
 
