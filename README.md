@@ -550,6 +550,11 @@ public void add(Object new);
 Limitation - applicable for only for list objects and not the universal cursor.
 
 
+06/05 -
+
+
+
+
 
 
 
