@@ -633,6 +633,16 @@ To convert any collection to Hashset above constructor is used.
 
 Insertion is hashset is based on hashcode.
 
+# LinkedHashset -
+
+Properties- 
+
+1.Insertion order is preserved.
+2.Duplicates are not allowed.
+3.Underlying datastructure is Hashtable + Linked List
+4.Introduced in 1.4 version.
+
+
 
 
 
