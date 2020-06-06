@@ -661,6 +661,60 @@ Sorted set specific methods are applicable on Sortedset implementation classes- 
 
 Default sorting order for numbers is ascending order and for strings- alphabetical order.
 
+TreeSet
+
+Properties -
+
+->Underlying data structure is Balanced tree
+->It doesnot allow heterogeneous data elements
+->Null allowed only once.
+
+Constructors 
+
+1.TreeSet t = new TreeSet();
+->default empty treeset will be created with default natural sorting order
+
+2.TreeSet t = new TreeSet(Comparator C)
+->treeset will be created with the customised sorting order
+
+3.TreeSet t = new TreeSet(Collection C)
+->to convert any collection to Treeset.
+
+4.TreeSet t = new TreeSet(SortedSet S)
+->to convert given sortedset to treeset.
+
+Null acceptance in Treeset-
+->If we are going to add null as first element in the empty treeset then it is allowed, else we will get nullpointer exception
+->Also, null cannot be added in non empty treeset
+
+->If we are depending on natural sorting order then the objects should be homogeneos and comparable, otherwise we will get ClassCastException at runtime.
+
+An object is said to be comparable if and only if the corresponding class implements java.lang.comparable Interface.
+
+Comparable Interface -
+
+This interface is present in java.lang package, contains only one method
+
+compareTo(Object obj)
+
+public int compareTo(Object obj)
+
+obj1.coompareTo(obj2)
+
+returns
+-1 iff obj1 has to come before obj2
+ 1 iff obj1 has to come after obj2
+ 0 iff both are equal
+ 
+ 
+ If we are depending on default natural sorting order internally JVM will call compareTo() method while inserting elements  in to the TreeSet.Hence the objects should be comparable.
+ 
+ Comparable meant for default natural sorting order where as Comparator meant for the customised sorting order.
+ 
+
+
+
+
 
 
 
