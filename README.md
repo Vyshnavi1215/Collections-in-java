@@ -548,6 +548,94 @@ Differences between Three cursors
 
 06/06-
 
+Comparision between three cursors based on some properties :
+
+Property-Applicable for :
+
+1.Enumeration applicable only for legacy classes.
+2.Iteration applicable for any collection class.(also called as Universal Cursor)
+3.ListIterator applicable only for List classes.
+
+Property- Movement :
+
+1. Enumeration -only forward(single direction)
+2.Iterator - only forward(Single direction)
+3.ListIterator - both directions(bidirectional)
+
+Property- Accessibility-
+
+1.Enumeration -only read operation.
+2.Iterator- both read and remove.
+3.ListIterator, Read, remove, replace and add elements
+
+Property - How we can get this cursors ?
+
+1.Enumeration -elements method of vector class.
+2.Iterator- iterator method of collection Interface.
+3.ListIterator - by using listIterator() method of List Interface
+
+Property - methods in cursors-
+
+1.Enumeration - two methods -hasNextElement(), nextElement().
+2.Iterator - three methods - hasNext(),next(),remove().
+3.List Iterator- 9 methods.
+
+Propery -legacy.
+
+1.Enumeration- Yes Legacy class(1.0)
+2.Iterator- No 1.2V
+3.List Iterator- No 1.2 V
+
+
+# Note :
+
+Interfaces references can be used to hold interface class objets
+
+how to print corresponding implemented class of interface.
+
+.getClass().getName();
+
+
+# Set
+
+Set Interface doesn't contain any new methods, we have to use the methods that are coming from collection Interface as set is the child interface of Collection
+
+
+HashSet()
+
+1. Underlying data structure - HashTable
+2.Duplicates are not allwoed.
+3.Insertion order not preserved, but it is based on Hashcode.
+4.Heterogeneous objects are allowed.
+5.Null Insertion is allowed.
+6.implements serializable and cloneable.
+7.Hashset is the best choice if the frequent operation is search operation
+
+Constructors of HashSet()
+
+1.Hashset h = new HashSet();
+
+create an empty Hashset with default capacity 16 and load factor -0.75(fillratio)
+
+fill ratio determines determines at which point the new Hashset to be created when for the given capacity of the hasshet.
+
+2.HashSet h = new Hashset(int initialcapacity);
+
+creates an Hashset Object with the initial capacity
+
+3.Hashset h = new Hashset(int initialcapacity float fillRatio)
+
+creates the hashset with the specified capacity and the fillratio after which new Hashset to be created.
+
+4.Hashset h = new Hashset(Collection c)
+
+To convert any collection to Hashset above constructor is used.
+
+Insertion is hashset is based on hashcode.
+
+
+
+
 
 
 
