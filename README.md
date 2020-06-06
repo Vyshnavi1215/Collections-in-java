@@ -1,5 +1,5 @@
 ## Collections-in-java
-#Collection framework in java
+# Collection framework in java
 
 05/13 
 
@@ -48,7 +48,7 @@ collections concepts are not up to the mark based on performance wise
 
 Differences between Arrays and Collections
 --------------------------------------------------------------------------------------------------------------------------------
- |      Arrays											Collections			|
+ |      Arrays										                                                           	Collections			|
  --------------------------------------------------------------------------------------------------------------------------------
  | 1. Fixed in size                                                             1. Growable in nature.				|
  --------------------------------------------------------------------------------------------------------------------------------
@@ -61,7 +61,7 @@ Differences between Arrays and Collections
  |  5.readymade method support is not available                                  5. readymade methods are available		|
                                                                                  (ex-to find the elements)
 ---------------------------------------------------------------------------------------------------------------------------------										 
- |  6.Arrays can be used to store primitive and objects  			6.Collections store only objects		|
+ |  6.Arrays can be used to store primitive and objects  			                     6.Collections store only objects		|
  --------------------------------------------------------------------------------------------------------------------------------
 
  
@@ -81,16 +81,16 @@ Differences between Arrays and Collections
  Java- Collection framework and in C++ STL(Standard Template Library).[Library means a group of classes and interfaces].
  
  
- ##9 Key interfaces in Collection Framework -
+ ## 9 Key interfaces in Collection Framework -
  
- #First Interface is collection
+ # First Interface is collection
  
  1.Collection-defines the most common methods applicable for all the the collections like addd, isempty etc.
  2.In general collection interface is considered as the root interface for collection.
  
  Note : There is no concrete class that implements the collection interface directly.
  
- #Diff between Collection and Collections :
+ # Diff between Collection and Collections :
  
  
 Collection - interface, collections -class, this will have pre defined methods to work on collections
@@ -101,7 +101,7 @@ but we can use as Collections.sort(ArrayList) to sort it.
 
 This is present in java.util.package.
 
-#Second Interface - List.(1.2)
+# Second Interface - List.(1.2)
 
 1.duplicates are allowed.
 2.Insertion order to be preserved.
@@ -110,7 +110,7 @@ Implementation classes of List are ArrayList(1.2), LinkedList(1.2), Vector[1.0] 
 
 The classes that exists from older versions are called as Legacy classes.
 
-#Third Interface is Set(1.2)
+# Third Interface is Set(1.2)
 
 1.Duplicates are not allowed.
 2.Insertion not preserved
@@ -124,16 +124,16 @@ List-0dupicates are allowed, Set-not allowed.
 List-Insertion order preserved, Set-not preserved.
 
 
-#Fourth Interface -Sorted set(1.2V)
+# Fourth Interface -Sorted set(1.2V)
 
 This is the child interface of Set(1.2V), when there is a requirement in which the duplicates are not allowed and insertion order need to be preserved then we go for Sortedset.
 
-#Fifth Interface -Navigable Set(1.6V)
+# Fifth Interface -Navigable Set(1.6V)
 It is the child interface of Sorted Set and it defines several navigation methods.
 
 Implementation of the Navigable set is Treeset(1.2V)
 
-#Sixth Interface is Queue(1.5V)
+# Sixth Interface is Queue(1.5V)
 
 Implementation classes of Queue are Priority Queue(1.5V) and Blocking Queue(1.5V) and Blocking Queue have two more implementation classes
 
@@ -155,30 +155,29 @@ If we want to represent a group of objects as Key value pairs then we got for Ma
 
 05/26
 
-#Seventh Interface -Map
+# Seventh Interface -Map
 
 Map is not the child interface of collections-
 
 Implementation classes
 
-Map(1.2V)                                                                      HashTable comes from Dictionary.
-                                              
-HashMap (1.2V)       WeakHashMap(1.2V)         IdentityHashMap(1.4V)       Hashtable
-                                                                            
-Linked HashMap(1.4V)                                                         child class of Hashtable is properties 
+Map(1.2V) implementation classes 1.HashMap (1.2V) 2. WeakHashMap(1.2V) 3.IdentityHashMap(1.4V) 4.Hashtable
+Linked HashMap(1.4V) is the child interface of HashMap                                                       
+
+child class of Hashtable is properties, Hashtable comes from Old Legacy class Dictionary
 
 
 Dictionay HashTable and Properties classes are fom version 1.0 and so they are called as Legacy classes.
 
 
-#Eighth Interface Sorted Map(1.2V)
+# Eighth Interface Sorted Map(1.2V)
 
 child interface of Map-
 
 This is mainly used when we want to represent a group of objects as key value pairs according to some sorting order then we go for Sorted Map.
 
 
-#Ninth Interface -
+# Ninth Interface -
 
 Navigable Map(1.6V)--
 
@@ -199,7 +198,7 @@ Comparator meant for customised sorting order.
 
 To get the collection objects one by one we have some interfaces.
 
-#Cursors is the concept.
+# Cursors is the concept.
 
 How many cursors are there in java?
 
