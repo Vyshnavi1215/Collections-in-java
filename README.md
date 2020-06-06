@@ -47,24 +47,13 @@ Collections are growable in nature based on our requirement.
 collections concepts are not up to the mark based on performance wise
 
 Differences between Arrays and Collections
- |------------------------------------------------------------ | ----------------------------------------------------------------|
-         Arrays										                                                           	    Collections			
- |------------------------------------------------------------ | ----------------------------------------------------------------|
-     1. Fixed in size                                                            1. Growable in nature.			                       	
- |-------------------------------------------------------------| -----------------------------------------------------------------|
-     2.Arrays are not good for Memory management                                	2.Collections are good for memory management    
-|------------------------------------------------------------- | --------------------------------------------------------------------|
-     3.Performance wise this is good                                           	3.Not good by performance wise.			
- |------------------------------------------------------------ |-------------------------------------------------------------------|
-     4.holds only homogeneous data                                                 4.holds both homogeneous and heterogeneous data 
- |------------------------------------------------------------ |-------------------------------------------------------------------|
-    5.readymade method support is not available                                   5. readymade methods are available		
-                                                                                 (ex-to find the elements)
-|--------------------------------------------------------------|----------------------------------------------------------------	|									 
-   6.Arrays can be used to store primitive and objects  			                     6.Collections store only objects		
- |------------------------------------------------------------ |-------------------------------------------------------------------|
 
- 
+1.Arrays are Fixed in size, Collections are growable in size.
+2.Arrays are not good for Memory management ,Collections are good for memory management 
+3.Performance wise this is good,Not good by performance wise.
+4.holds only homogeneous data,holds both homogeneous and heterogeneous data
+5.readymade method support is not available,readymade methods are available(ex-to find the elements)
+6.Arrays can be used to store primitive and objects,Collections store only objects
  
 # Collection and Collection Framework-
  
