@@ -642,6 +642,28 @@ Properties-
 3.Underlying datastructure is Hashtable + Linked List
 4.Introduced in 1.4 version.
 
+Usage of LinkedHashSet-
+
+Cache based applications
+
+SortedSet Details
+
+If we want to store group of objects according to some sorting order then we need to go for SortedSet
+
+Sorted set specific methods are applicable on Sortedset implementation classes- TreeSet
+
+1.Object first() -returns the first element of the object.
+2.Object last () -returns the first element of the object.
+3.sortedSet headSet(Object obj) - returns the sortedSet whose elements are less than obj
+4.sortedSet tailSet(Object obj) - returns the SortedSet ehole elements are >= obj.
+5.sortedSet Subset(Object obj1, Object obj2) - returns the SortedSet whole elements are >=obj1 and <obj2
+6.comparator() -return comparator object that describes the underlying sorting technique, if we are using default sorting order then this will return null.
+
+Default sorting order for numbers is ascending order and for strings- alphabetical order.
+
+
+
+
 
 
 
