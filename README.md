@@ -707,9 +707,41 @@ returns
  0 iff both are equal
  
  
- If we are depending on default natural sorting order internally JVM will call compareTo() method while inserting elements  in to the TreeSet.Hence the objects should be comparable.
+ If we are depending on default natural sorting order internally JVM will call compareTo() method while inserting elements in to the TreeSet.Hence the objects should be homogeneous and comparable.
  
  Comparable meant for default natural sorting order where as Comparator meant for the customised sorting order.
+ 
+ 06/07
+ 
+ If we are not satisfied with default natural sorting order or if we want customised sorting order then we have to go for Comparator
+ 
+ Comparator interface is present in java.util package
+ 
+ It defines two methods compare and equals
+ 
+ compare works same as compareTo
+ 
+ For a class implemeting Comparator it should define only the logic for Compare Method, equal method is optional.
+ 
+ Consider an example
+ 
+ class myComparator implements Comparable
+{
+
+public int compare(){
+}
+}
+Here any class is the child class of Object class, since object class contains the implementation of equal method, and every class is inherited from Object, the implementation will be present already
+
+Comparator- to implemet our own sorting techniques
+
+
+
+
+
+ 
+ 
+ 
  
 
 
