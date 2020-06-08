@@ -737,8 +737,15 @@ Comparator- to implemet our own sorting techniques
 
 06/08
 
-
 Treeset details -
+
+
+How to add string buffer objects in to treeset
+
+We need to use toString Method to convert String buffer to String while comparing.
+
+If we are defining our own objects by comparator then the objects need not to be comparable.
+
 
 
 
