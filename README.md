@@ -746,6 +746,13 @@ We need to use toString Method to convert String buffer to String while comparin
 
 If we are defining our own objects by comparator then the objects need not to be comparable.
 
+06/10
+
+If we are depending on default natural sorting order then the objects should be homogeneous and comparable else will get classcastexception
+
+If we are defining our own natural sorting order then the objects can be non comparable and heterogeneous as well
+
+
 
 
 
