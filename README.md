@@ -15,7 +15,7 @@ There are some limitations in Arrays:
 2.Only Homogeneous data elements allowed in arrays.
 3.Underlying data structure in not in arrays
 
-Point 2-omogeneous data element means emp[0] = new Employee(); -> this is valid.
+Point 2-Homogeneous data element means emp[0] = new Employee(); -> this is valid.
 
 But emp[1] = new Customer();this is invalid -> compiler throws an error stating incompatible type.
 
@@ -30,7 +30,7 @@ obj[1] = new Customer();   -> valid.
 Point 3-- Underlying Data structure.
 
 In array if we need to search anything we need to write the code manually to search it or if we need to sort the data then we need to 
-write the program for searching as well.(no readymade method support)
+write the program for sorting as well.(no readymade method support)
 
 but this is not the case in collections.
 
@@ -63,7 +63,7 @@ Differences between Arrays and Collections
  
  It defines several classes and interfaces which are used to define a collection.
  
- Collection is not a new concept, it is alo there in other languages
+ Collection is not a new concept, it is also present in other languages
  
  In java it is collection and in C++ it is Container
  
@@ -95,7 +95,7 @@ This is present in java.util.package.
 1.duplicates are allowed.
 2.Insertion order to be preserved.
 
-Implementation classes of List are ArrayList(1.2), LinkedList(1.2), Vector[1.0] and Stack[1.0](Vector and stack are called as Legacy classes as they exist from 1.0) All others are from 1.2V(Collection, List,ArrayList,LinkedList)
+Implementation classes of List are ArrayList(1.2), LinkedList(1.2), Vector[1.0] and Stack[1.0](Vector and stack are called as Legacy classes as they exist from 1.0 Version) All others are from 1.2V(Collection, List,ArrayList,LinkedList)
 
 The classes that exists from older versions are called as Legacy classes.
 
@@ -109,7 +109,7 @@ Implementation classes Hashset(1.2V) and LinkedHashset(1.4V)
 
 Diff between List and Set
 
-List-0dupicates are allowed, Set-not allowed.
+List-Dupicates are allowed, Set-not allowed.
 List-Insertion order preserved, Set-not preserved.
 
 
@@ -132,7 +132,7 @@ Note - All the above collection Interfaces are used to represent as group of  in
 
 Queue is best used when we need to do any operation in First In First Out Order.
 
-Before processing if we want to represent a group of individual objects, then we go for Queue.
+Before processing if we want to store a group of individual objects, then we go for Queue.
 
 For example consider a message to be sent for 100 people then the recepients should be stored in prior before sending then we can use
 
@@ -156,7 +156,7 @@ Linked HashMap(1.4V) is the child interface of HashMap
 child class of Hashtable is properties, Hashtable comes from Old Legacy class Dictionary
 
 
-Dictionay HashTable and Properties classes are fom version 1.0 and so they are called as Legacy classes.
+Dictionay,HashTable and Properties classes are from version 1.0 and so they are called as Legacy classes.
 
 
 # Eighth Interface Sorted Map(1.2V)
@@ -221,7 +221,7 @@ In the collection interface we will have the most common methods applicable for 
 •	To check whether a particular object is available or not in that collection - contains(Object o).
 •	To check whether a group of particular objects are available or not -containsAll(Collection c).
 
-Coverting a collection to array().
+Coverting a collection to array-
 
 Object a[] =c.toArray().
 
@@ -242,7 +242,7 @@ methods specific to list interface.
 •	To add group of objects from a specified index addAll(int index Collection c)
 •	To remove an element at a particular index- remove(int index)
 •	To find a particular element in the list.indexOf(Object o)
-•	To find the last occurence of that particular element in the lsit-list.lastIndexOf(Object o)
+•	To find the last occurence of that particular element in the list-list.lastIndexOf(Object o)
 •	To iterate the list we use ListIterator()
 
 •	To get the value at particular index get(int index)
@@ -275,11 +275,11 @@ Constructors-
 whenever we create a arraylist its default capacity is 10.
 but if we add 11th element then the compiler will create the new capacity arraylist by copying all the elements from the initially created arraylist and the old arraylist will be moved to garbage collection.
 
-coming to the size of newly created arraylist- capacity is calculated as - current (capacity *3/2)+1
+coming to the size of newly created arraylist- capacity is calculated as - (current capacity *3/2)+1
 
-2.ArrayList al = ne ArrayList(int initialcapacity)
+2.ArrayList al = new ArrayList(int initialcapacity)
 
-with the first constructor, if the sixe increases based on requirement the processing will be too lsow, since all the elements have to be copied to the newly created list.
+with the first constructor, if the sixe increases based on requirement the processing will be too slow, since all the elements have to be copied to the newly created list.
 
 but  if we know the capacity in prior then we can use this second constructor with initial capacity.
 
@@ -308,7 +308,7 @@ it is a marker interface and doesn't contain any methods
 
 ArrayList is the best choice if our frequent operation is retrieval.
 
-but if our operations are adding in middle or removing an element arraylist doen't suit, as it lags performance.
+but if our operations are adding in middle or removing an element arraylist doesn't suit, as it lags performance.
 
 05/31-
 
@@ -401,7 +401,7 @@ Vector v = new Vector(100) ;-specify the capacity as per our need.
 
 if we have 101st element the capcity will increase as below.
 
-new capacity = 2* current capcity--
+new capacity = 2* current capcity.
 
 but if we dont want all the memory locations we can specify the increment value as per our need.
 
@@ -448,7 +448,7 @@ so when the element is not found it returns -1
 
 offset means a value in general
 
-Cursors in Java--If we want to retrieve objects deom collection one by one then we should go for cursors in Java.
+Cursors in Java--If we want to retrieve objects from collection one by one then we should go for cursors in Java.
 
 There are three cursors in java
 
@@ -520,21 +520,21 @@ where l is any list object
 
 This has 9 methods-
 
-#Forward Direction
+# Forward Direction
 
 public boolean hasNext();
 public Object next();
 public int nextIndex();
 
-#Backward Direction -
+# Backward Direction -
 
 public boolean hasPrevious();
 public Object previous();
 public int nextPrevious();
 
-Other methods -
+# Other methods -
 
-public voud remove();
+public void remove();
 public void set(Object obj);
 public void add(Object new);
 
@@ -617,7 +617,7 @@ Constructors of HashSet()
 
 create an empty Hashset with default capacity 16 and load factor -0.75(fillratio)
 
-fill ratio determines determines at which point the new Hashset to be created when for the given capacity of the hasshet.
+fill ratio determines determines at which point the new Hashset to be created when for the given capacity of the hashset.
 
 2.HashSet h = new Hashset(int initialcapacity);
 
