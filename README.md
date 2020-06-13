@@ -799,7 +799,116 @@ Map is not interface of collection
 
 If we want any group of objects as key value pairs then we go for Map concept
 
-Each key value pair is called Entry.
+Each key value pair is called Entry, hence map is a collection of entry objects
+
+# Map Interface Methods
+
+ put method used in Map
+
+object put(Object key, Object value)
+
+1.)To add one key value pair to the mail
+2.)If the key is already present, them old value will be replaced with new value and returns old value.
+
+m.put(101, "Durga")
+m.put(102, "Shiva")
+m.put(101, "Ravi")
+
+Now Durga will be replaced with Ravi
+
+
+->void putAll(Map m) - To add group of key value pairs
+->Object get(Object key) - return the value associated with specified key
+->Object.remove(Object key) - removes the entry associated with specified key
+->boolean containsKey(Object key)
+boolean containsValue(Object value)
+boolean isEmpty()
+int size()
+void clear();
+
+
+
+Set KeySet() - to return only keys and keys wont be duplicate
+Collection values() -values of that particular keys
+set entrySet() - to obtain set of entries.
+
+The above three methods are considered as Collection view of Map since we are applying on a map but retrieving a collection
+
+
+Entry Interface
+
+A map is a group of key value pairs and each key value pair is called as an entry
+
+Hence Map is considered as a collection of entry objects 
+
+without existing the map object  there is no chance of existing entry object
+
+Hence Entry interface is defined inside Map Interface
+
+
+interface Map
+{
+interface entry
+{
+Object getKey()
+Object getValue()
+Object setValue(Object newO)
+}
+}
+
+The above three methods are entry specific and can be applied on Entry object
+
+
+# HashMap
+
+1.Underlying data structure -Hashmap
+2.Insertion order is not preserved and it is based on Hashcode of Keys
+3.Duplicate Keys are not alloed, but values can be duplicate.
+4.Heterogeneous objects are allowed for both key and value.
+5.Null insertion is allowed for key that too only once, but allowed as many times for values
+6.Hashmap implements serializable and cloneable interfaces but not Random Access
+7.Hashmap is the best choice if the frequent operation is searching
+
+
+Constructors
+
+Hashmap m = new HashMap() initial capacity 16 and loadfactor -0.75
+
+Hashmap m = new HashMap( int initialcapacity)
+
+Hashmap m = new HashMap(int initialcapacity float loadfactor)
+
+HashMap m = new HashMap(Map m) - to convert any map object to Hashmap
+
+
+Differences between HashMap and HashTable
+
+
+HashMap - Every method present in HashMap is not synchronised, not threadsafe, performance is high, null  key and values allowed, introduced in version 1.2
+
+HashTable - synchronised, threadsafe, performance is low, null concept n/a, legacy class(1.0V)
+
+
+How to get synchronised version of HashMap object
+
+
+By default  HashMap is non synchronised, but  we can get synchronised version of HashMap by using synchronisedMap method of Collections Class
+
+Hashmap m = new HashMap()
+
+Map m1 = Collections.synchronisedMap(m);
+
+m is non synchronised amd m1 is synchrnised.
+
+
+
+
+
+
+
+
+
+
 
 
 
