@@ -776,10 +776,37 @@ Comparator
 ->Meant for customised sorting order
 ->Present in java.util
 ->Methods present are compare() and equals()
-->Implemented classes are Collator and Rule Based Collator
+->Implemented classes are Collator and Rule Based Collators
+
+# Map
+
+Map 
+HashMap    
+Linked HashMap(1.4)
+IdentityHashMap(1.4)
+WeakHashMap
+SortedMap
+NavigableMap(1.6)
+TreeMap
+
+Remaining all in the version 1.2
+
+We have Hashtable concepts in Map, Hashtable comes from Dictionary and implementation class of Hashtable is Properties(All are legacy classes)
+
+Map-
+
+Map is not interface of collection
+
+If we want any group of objects as key value pairs then we go for Map concept
+
+Each key value pair is called Entry.
 
 
-Set Implemented Classes
+
+
+
+
+
 
 
 
