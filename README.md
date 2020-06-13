@@ -753,6 +753,39 @@ If we are depending on default natural sorting order then the objects should be 
 If we are defining our own natural sorting order then the objects can be non comparable and heterogeneous as well
 
 
+06/13
+
+Difference between Comparable and Comparator Interface
+
+->For predefined comparable classes, default sorting is already available, if we are not satisfied with the default sorting order then we can for comparator.
+
+->For predefined non comparable classes like String Buffer  default natural sorting is not available, hence comparator should be used.
+
+
+->Consider an own class, the person who is going to write the functionality of the class is responsible for writing the logic for default natural sorting order.
+
+  If the person who is going to use this class is not satisfied by this default natural sorting order then that person should implement   sorting order based on the requirement using comparator.
+
+Comparable 
+->Default natural sorting order
+->Present in java.lang
+->Only one methid present -compareTo()
+->Implemented classes are All wrapper classes and String
+
+Comparator
+->Meant for customised sorting order
+->Present in java.util
+->Methods present are compare() and equals()
+->Implemented classes are Collator and Rule Based Collator
+
+
+Set Implemented Classes
+
+
+
+
+
+
 
 
 
