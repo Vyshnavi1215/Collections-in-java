@@ -949,6 +949,19 @@ but if we use LinkedHashMap we will get as {10= Test, 10= Example} //i1==i2 retu
 
 Just before destroying an object garbage collector calls finalize method to do the clean up activities
 
+It is exactly same as HashMap except the following difference
+
+In the case of HashMap, eventhought the object doesn't have any reference it is not eligible for GC if it is associated with the HashMap
+
+i.e HashMap dominates garbage collector
+
+but in the case of weakHashMap, if the object doesn't contain any references it is eligible gc eventhough object associated with WeakHashMap
+
+i.e gc dominates weakhashMap
+
+
+
+
 
 
 
