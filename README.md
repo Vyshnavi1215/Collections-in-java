@@ -901,6 +901,64 @@ Map m1 = Collections.synchronisedMap(m);
 m is non synchronised amd m1 is synchrnised.
 
 
+06/16
+
+LinkedHashMap -child class of HashMap, exactly same as HashMap(including methods and constructors)
+
+LinkedHashMap - Underlying data structure is LinkedList and HashTable, Insertion order is preserved, introduced in 1.4V
+HashMap -Underlying data structure is Hashtable, Insertion order is not preserved and is based on hashcode of Keys, introduced in 1.2V
+
+LinkedHasSet and LinkedHashMap are commonly used for developing Cache based applications.
+
+
+Difference between == and .equals()
+
+In general == operator meant for reference comparision(address comparision) where as .equals() method meant for content comparision
+
+
+Interger I1 = new Integer(10);
+Integer I2 = new Integer(10);
+S.O.P(I1 ==I2) //false  I1->10, I2->10
+S.O.P(I1.equals(I2)); //true    content is same
+
+# IdentityHashMap -
+
+It is exactly same as HashMap(including methods and constructors) except the follwoing difference
+
+In the case of normal HashMap JVM will use .equals() method to identify the dupilcate keys, which is meant for content comparision.
+
+But in the case of IdentityHashMap JVM will use == operator to identify the duplicate keys which is meant for reference comparision(address comparision)
+
+
+Example
+
+HashMap m = new HashMap()
+Integer i1= new Integer(10);
+Integer i2 = new Integer(10);
+
+m.put(i1, "Test");
+m.put(i2, "Example);
+s.o.p(m)
+
+The output we get here us {10= example} since the JVM uses .equals method to find the duplicate keys and the value will be replaced with new value.
+
+but if we use LinkedHashMap we will get as {10= Test, 10= Example} //i1==i2 return false
+
+
+# WeakHashMap
+
+Just before destroying an object garbage collector calls finalize method to do the clean up activities
+
+
+
+
+
+
+
+
+
+
+
 
 
 
