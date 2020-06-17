@@ -959,7 +959,49 @@ but in the case of weakHashMap, if the object doesn't contain any references it 
 
 i.e gc dominates weakhashMap
 
+06/17
 
+SortedMap
+
+It is the child interface of Map, if we want to represent a group of key value pairs according to some sorting order of keys then we should go for SortedMap
+
+Sorting is based on key but not based on value
+
+Sorted  map defines the following specific methods
+
+Object firstKey();
+Object lastKey()
+SortedMap headMap(Object key);
+SortedMap tailMap(Object key);
+sortedMap subMap(Object key1, Object key2);
+Comparator comparator();
+
+
+Example -
+
+101->A
+103->B
+104->C
+107->D
+125->E
+136->F
+
+
+Object firstKey();-101
+Object lastKey(); -136
+SortedMap headMap(107);-{101=A,103=B,104=C}
+SortedMap tailMap(107);{107=D125=E,136=F}
+sortedMap subMap(104, 136};{104=C,107=D,125=E}
+Comparator comparator();
+
+TreeMap-
+
+->Underlying data structure is red black tree
+->Insertion is not preserved and it is based on some sorting order of keys
+->Duplicate keys are not allowed, but values can be duplicated.
+->If we are depending on default natural sorting order then keys should be homogeneous and comparable, otherwise we will get runtimeexception mentioning ClassCastException.
+->If we are defining our own sorting by comparator then keys need not be homogeneous and comparable, we can take heterogeneous non comparable objects also
+->Whether we are default natural sorting order or customised sorting order values have no restriction, we can take non comparable heterogeneous objects also
 
 
 
