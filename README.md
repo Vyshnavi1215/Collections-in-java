@@ -1003,6 +1003,24 @@ TreeMap-
 ->If we are defining our own sorting by comparator then keys need not be homogeneous and comparable, we can take heterogeneous non comparable objects also
 ->Whether we are default natural sorting order or customised sorting order values have no restriction, we can take non comparable heterogeneous objects also
 
+Null acceptance
+
+1.For non empty tree map if we are trying to insert an entry with null key then we will get Run time exception saying NPE
+2.For an empty tree map, as the first entry with null key is allowed but after inserting that entry if we are trying to insert any other entry then we will get run time exception saying NPE
+# Note 
+The above null acceptance rule applicable until 1.6V only from 1.7 version onwards null is not allowed for key.
+
+but for values we can use null any no.of times, there is no restriction whether it is 1.6V or 1.7V
+
+Constructors
+
+TreeMap t = new TreeMap() = inserts elements in to the map based on the default sorting order of the keys
+TreeMap t = new TreeMap(Comparator c) - this is used for customised sorting order based on the comparator object we pass sorting will be done
+TreeMap t = new TreeMap(SortedMap m)- to convert sorted map to TreeMap
+TreeMap t = new TreeMap(Map m) -to convert any map object to TreeMap
+
+
+
 
 
 
