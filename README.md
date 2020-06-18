@@ -1019,6 +1019,17 @@ TreeMap t = new TreeMap(Comparator c) - this is used for customised sorting orde
 TreeMap t = new TreeMap(SortedMap m)- to convert sorted map to TreeMap
 TreeMap t = new TreeMap(Map m) -to convert any map object to TreeMap
 
+06/18
+
+Hashtable
+
+Constructors 
+
+Hashtable h = new Hashtable()-creates an empty hashtable object with default initial capacity 11 and default fill ratio 0.75
+Hashtable h = new Hashtable(int initialcapacity)
+Hashtable h = new Hashtable(int initialcapacity float fillratio);
+Hashtable h = new Hashtable(Map m) interconversion between map objects
+
 
 
 
