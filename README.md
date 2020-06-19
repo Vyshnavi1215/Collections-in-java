@@ -1030,6 +1030,52 @@ Hashtable h = new Hashtable(int initialcapacity)
 Hashtable h = new Hashtable(int initialcapacity float fillratio);
 Hashtable h = new Hashtable(Map m) interconversion between map objects
 
+06/19
+
+In Hashtable values will set based on hashcode
+
+the way on ehivh the output we get is from top to bottom and if the bucket contains more values then the printing order is from right to left
+Refer the images in Info folder for further clarification
+
+# Properties
+
+In our program if anything which changes frequently like username , password, mailid, mobe number etc are  ot recommended to hardcode in java program because if there is any change, to reflect that change recompilation, rebuild, redeploy application are required even sometimes server restart also required which creates a big business impact to the client
+
+We can overcome this problem by using the properties file, such type of variable things we have to configure in the properties file
+
+From that properties file we have to read in to Java program and we can use those properties.
+
+The main advantage of this approach is if there is a change in properties file to reflect that change just redloyment is enough which wont create any business impact to the client
+
+We can use java properties object to hold properties which are coming from properties file
+
+In normal map like HashMap HashTable TreeMap key and value can be any type, but in the case of properties key and value should be string typr "only".
+
+Constructor
+
+Properties p = new Properties();
+
+Methods
+
+String setProperty(String pname, String pvalue) - to set a new property
+
+If the specified property already available then the old value will be replaced with new value and returns old value
+
+String getProperty(String pname) - to get the vlaue associated with specified property
+
+If the specified property then the above method returns null
+
+Enumeration propertynames() - returns all property names present in Properties object
+
+
+2 another methods
+
+voild load(InputStream is) -to laod the properties from the properties file in to java properties object
+
+void store(OutputStream os , String comment) - to store properties from java properties object to properties file
+
+
+
 
 
 
