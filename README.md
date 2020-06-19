@@ -1072,7 +1072,56 @@ Enumeration propertynames() - returns all property names present in Properties o
 
 voild load(InputStream is) -to laod the properties from the properties file in to java properties object
 
-void store(OutputStream os , String comment) - to store properties from java properties object to properties file
+void store(OutputStream os , String comment) - to store properties from java properties object to properties file.
+
+# Queue
+
+1.5 Version enhancements(Queue interface)
+
+It is the child interface of Collection
+
+Queue -priorityqueue and blocking queue
+
+blocking queue is again divided into priorityblockingqueue and linkedblockingqueue
+
+If we want to represent a group of individual objects prior to processing then we should go for queue.
+
+For example before sending a sms message all mobile numbers should be stored in some data structure, in which order we added mobile numbers in the same order only message should be sent.for this fifo requirement queue is the best choice
+
+Usually queue follows first on first out order but based on our rewuirement we can implement our own priority order also(priority queue)
+
+from 1.5v onwards linked list class also implements Queue Interface.
+
+linkedlist based implementation of queue always follows fifo order
+
+
+Queue interface specific methods
+
+
+boolean offer(Object o)- to add an object in to queue
+Object peek()- to return head head element of the queue without deleting, if queue is empty this returns null
+Object Element() - return the head eleament of the queue without deleting, but run time exception occurs if queue is empty. RE-NoSuchElementException
+Object poll() - to remove and return the head element of the element, if queue is empty then returns null,
+Object remove() -to remove and retun the head element of the queue, but run time exception occurs if queue is empty.RE-NoSuch ElementException
+
+
+properties-
+
+default and customised sorting order allowed(priority can be both)
+insertion order not preserved and based on some priority
+null insertion not allowed, even as the first element also
+duplicates not allowed.
+
+
+1.6V Enhancements
+
+Navigableset
+Navigable Map
+
+
+
+
+
 
 
 
