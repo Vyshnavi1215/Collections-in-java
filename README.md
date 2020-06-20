@@ -1,6 +1,7 @@
 ## Collections-in-java
 # Collection framework in java
-
+---------------------------------------------------------------------------------------------------------------------------------------
+                                              ## Collections start
 05/13 
 
 Need of Collections in java:
@@ -1215,7 +1216,50 @@ Another utilty class present in Collections is Arrays()
 
 Arrays class is an utility class to define several utility methods for array objects
 
-1.Sortung elements of Array
+1.Sorting elements of Array
+
+Arrays class defines the following sort methods to sort elements of primitive and object type arrays
+
+public static void sort(Primitive[] p) - to sort according to natural sorting order
+public static void sort(Object[] o) - to sort according to natural sorting order.
+public static void sort(Object[] o, Comparator c)- to sort according to customised sorting order.
+
+# Note
+
+We can sort primitive arrays only based on default natural sorting order but for objects we can do both sorting i.e default natural sorting order or customised sorting order
+
+# Searching the elements of Array
+
+Arrays class deines the following binarySearch methods
+
+public static int binarySearch(primitive[] p, primitive target)
+public static int binarySearch(Object[] a, Object target)
+public static int binarySearch(Object[] p, Object target, Comparator c)
+
+Note : All rules Arrays class binary search methods are exactly same as BinarySearch methods
+
+Conversion of array to list
+
+public static list asList(Object o)
+
+Strictly speaking this method wont create an independent list object
+
+For the existing array we are getting list view
+
+By using array reference if we perform any change automatically that change will be reflected to the list similarly by using list reference if we perform any change that change will be reflected automatically to the array
+
+By using list reference we cant perform any operation which varies the size otherwise we will get runtime expection saying UnsupportedOperationException
+
+By using list reference we are not allowed  to replace with heterogeneous objects otherwise we will get runtime exception saying ArrayStoreException
+
+                                        ## End of Collections
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+ 
 
 
 
