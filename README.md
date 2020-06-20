@@ -1,7 +1,7 @@
 ## Collections-in-java
 # Collection framework in java
 ---------------------------------------------------------------------------------------------------------------------------------------
-                                              ## Collections start
+                                              # Collection framework in java
 05/13 
 
 Need of Collections in java:
