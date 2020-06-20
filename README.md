@@ -1115,8 +1115,119 @@ duplicates not allowed.
 
 1.6V Enhancements
 
-Navigableset
-Navigable Map
+Navigableset(I)
+Navigable Map(I)
+
+The above two are introduced are part of 1.6V
+
+NavigableSet -
+
+It is child interface of SortedSet and it defines several methods for navigation purposes
+
+Methods in NavigableSet:
+
+floor(e) - returns the lowest element which is <=e
+lower(e) -returns the lowest element which is <e
+ceiling(e) -returns the highest element which is >=e
+higher(e) -returns the highest element which is >e
+pollFirst() - remove and return the first element 
+pollLast()-remove and return last element.
+descendingSet() - returns NavigableSet in reverse order
+
+
+NavigableMap -
+
+It is the child interface of Sorted Map which is introduced in 1.6V
+It defines several methods for navigation purposes
+
+Navigable Map defines the following methods
+
+
+floorKey(e) - returns the lowest key which is <=e
+lowerKey(e) -returns the lowest key which is <e
+ceilingKey(e) -returns the highest key which is >=e
+higherKey(e) -returns the highest key which is >e
+pollFirstEntry() - remove and return the first entry 
+pollLastEntry()-remove and return last entry.
+descendingMap() - returns NavigableMap in reverse order
+
+Utility Classes
+
+Collections :
+
+Collections class defines several utilty methods for collection objects like Sorting, Searching, reversing etc 
+
+Sorting elements of list:
+
+Collections class defines the following two sort methods 
+
+public static void sort(List l) - To sort based on default natural sorting order In this case list should compulsory contain homogeneous and comparable objects otherwise we will get runtime exception saying ClassCastException
+
+List should not contain null values, if it contains null, while comparing we will get null pointer exception
+
+->public static void sort(List l, comparator C)
+
+to sort based on Customised sorting order
+
+
+Searching Elements of List-
+
+
+Collections defines the following binary search methods
+
+public static int binarySearch(List l, Object target) - If the list is sorted according to default natural sorting order then have to use this method
+
+public statuc int binarySearch(List l, Object target, Compararator c) - we have to use this method if the list is sorted according to customised sorting order
+
+Conclusions:
+
+->The above search methods internally will use binary search algorithm 
+
+->Successful search returns index.
+
+->Unsuccessful search returns insertion point
+
+->Insertion point is the location where we can place the target element in sorted list.
+
+->Before calling binary search method compulsory list should be sorted otherwise we will get unpredictable results
+
+->If the list is sorted according to comparartor , then at the time of search operation also we have to pass same comparartor object
+otherwise we will get unpredictable results.
+
+
+For the list of n elements in the case of binary search methods 
+1.successful search resukt range is 0 to (n-1)
+2.Unsuccessful search result range is -(n+1) to -1
+3.Total result range is -(n+1) to (n-1)
+
+
+Reversing elements of List
+
+public static void reverse(List l)
+
+reverse() vs reverseOrder()
+
+We can use reverse method to reverse order of elements of list whereas we can use reverseOrder method to get reversed Comparator
+
+Comparator c1= Collections.reverseOrder(Comparator c)
+
+Another utilty class present in Collections is Arrays()
+
+Arrays class is an utility class to define several utility methods for array objects
+
+1.Sortung elements of Array
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
