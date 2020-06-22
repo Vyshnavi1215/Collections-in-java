@@ -1,12 +1,17 @@
-## Collections-in-java
+## Learning log for Collections-in-java
 # Collection framework in java
----------------------------------------------------------------------------------------------------------------------------------------
-                                               Collection framework in java
-05/13 
 
-Need of Collections in java:
+#### 05/13 
 
-Think of situation where we need to store 10000 values, we cannot go for variable declaration approach as it reduces readabilty and its not a good practice to declare more variables.
+## Need of Collections in java:
+
+- **Problem** storing thousands of strings ina program
+- Individual String declaration is hard, reduces readbility, not a convention
+- We can use array for it ```java  Employee emp[] = new Employee[10000]; ```
+- But in array we need to declare size, what if we need it dynamically
+- **Collections** are used for this.
+
+- Think of situation where we need to store 10000 values, we cannot go for variable declaration approach as it reduces readabilty and its not a good practice to declare more variables.
 Hence we go for Array approach.In array we can store all the values by defining a single variable.
 for example Employee emp[] = new Employee[10000]; this works well as the size is defined initially.But what happens if we need to store more than 10000????
 
