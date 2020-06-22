@@ -277,146 +277,96 @@ public static Map synchronizedMap(Map m)
 - Differences between ArrayList and LinkedList
 - Arraylist underlying data structure - resizeable or growable array, Linked List-underlying data structure- double linked list.
 
-### Vector class
+## Vector class
 - Vector is synchronised, which is thread safe
+### Vector methods
+- to add the element ``` addElement(Object O) ```
+- to remove the element ``` removeElement(Object o) , removeAllElements(),removeElementsAt(int Index) ```
+- to retrieve elements ``` Object elementAt(int index), Object get(int index) ,Object FirstElement(), Object LastElement() ```
 
-Vector methods-
-
-to add the element -addElement(Object O)
-
-to remove the element -removeElement(Object o) , removeAllElements(),removeElementsAt(int Index)
-
-to retrieve elements - Object elementAt(int index),Object get(int index),Object FirstElement(),Object LastElement()
-
-Constructors--
-
-default initial capacity is 10
-
+### Constructors
+- default initial capacity is 10
+``` 
 Vector  v = new Vector();
-
 Vector v = new Vector(100) ;-specify the capacity as per our need.
-
-if we have 101st element the capcity will increase as below.
-
-new capacity = 2* current capcity.
-
-but if we dont want all the memory locations we can specify the increment value as per our need.
-
+```
+- if we have 101st element the capcity will increase as below. ``` new capacity = 2* current capcity ```
+- but if we dont want all the memory locations we can specify the increment value as per our need.
+``` 
 Vector v = new Vector(int initialcapacity, int incremental capacity)
-
 Vector v= new Vector(Collection c)<-- to convert any collection class to vector
+```
 
-Stack class--
+## Stack class
+- This is the child class of vector class
+- This is specially designed for last in first out (LIFO) order.
+### Constructor
+``` Stack s = new Stack(); ```
+### Methods of stack
+- ```push(Object o)``` to insert an element into stack
+- ```pop()``` to remove and return the top of the stack.
+- ```peek()``` to return the top of the stack without removing the element
+- ```empty()``` to check whether the stack is empty
+- ```search()``` to search an element in the stack and this returns offset
 
-This is the child class of vector class
+### now what is offset??
+- consider a stack with three elements
 
-This is specially designed for last in first out (LIFO) order.
+[x] C -1
+[x] B -2
+[x] A -3
 
-Constructor-
+- In the above stack if we perform search as search of A
+- ```search("A")``` it returns 3
+- ```search("Z")``` it returns -1
+- so when the element is not found it returns -1
+- Offset means a value in general
 
-Stack s = new Stack();
+- Cursors in Java--If we want to retrieve objects from collection one by one then we should go for cursors in Java.
+- There are three cursors in java
 
-Methods of stack--
+1. Enumeration
+2. Iterator
+3. ListIterator
 
-push(Object o) - to insert an element into stack
+#### 06/01
 
-pop()- to remove and return the top of the stack.
-
-peek() - to return the top of the stack without removing the element
-
-empty()-to check whether the stack is empty
-
-search()- to search an element in the stack and this returns offset--
-
-now what is offset??
-
-consider a stack with three elements
-
-✔ C -1
-✔ B -2
-✔ A -3
-
-In the above stack if we perform search as search of A
-
-search("A") -it returns 3
-search("Z") - it returns -1
-
-so when the element is not found it returns -1
-
-offset means a value in general
-
-Cursors in Java--If we want to retrieve objects from collection one by one then we should go for cursors in Java.
-
-There are three cursors in java
-
-1.Enumeration
-2.Iterator
-3.ListIterator
-
-1.Enumeration -
-
-06/01
-
-Enumeration-
-
-Enumeration can be created by using elements of vector class.
-
+## Enumeraion
+- Enumeration can be created by using elements of vector class.
+``` 
 Enumeration e =v.elements();
-
-Methods-
-
+// Methods
 public boolean hasMoreElements()
 public Object nextElement()
+```
 
-06/02--
-Iterator-
-
-Enumeration-Applicable for legacy classes only and not an universal cursor, can perform only read operation
-
-Iterator is universal cursor and can be performed on any collection class, by using iterator we can perform both read and remove operations
-
-we can create iterator obbject by using the methods of collection interface.
-
+#### 06/02
+## Iterator
+- Enumeration-Applicable for legacy classes only and not an universal cursor, can perform only read operation
+- Iterator is universal cursor and can be performed on any collection class, by using iterator we can perform both read and remove operations
+- We can create iterator obbject by using the methods of collection interface.
+```
 public Iterator iterator();
-
-Iterator itr= c.iterator();
-
-where c is any collection object
-
-Methods of Ierator-
-
+Iterator itr= c.iterator(); //where c is any collection object
+// Methods of Ierator
 public boolean hasNext();
-
 public Object next();
-
 public void remove();
+```
 
-Limitations--
+### Limitations
+- Forward direction cursors- only next elements will be checked.
+- only read and remove, no replace operations
 
-Forward direction cursors- only next elements will be checked.
-
-only read and remove, no replace operations
-
-ListIterator--
-
-this is a bidirectional cursor.
-
-by using this we can read, remove, replace or add new items as well.
-
-this is the child interface of Iterator-
-
-how to get the listIterator object--
-
+## ListIterator
+- This is a bidirectional cursor.
+- by using this we can read, remove, replace or add new items as well.
+- this is the child interface of Iterator-
+- how to get the listIterator object--
+```
 public ListIterator listIterator();
-
-
-Example - ListIterator ltr =l.listIterator();
-
-where l is any list object
-
-
-This has 9 methods-
-
+ListIterator ltr =l.listIterator(); //where l is any list object
+// This has 9 methods
 # Forward Direction
 
 public boolean hasNext();
@@ -434,12 +384,11 @@ public int nextPrevious();
 public void remove();
 public void set(Object obj);
 public void add(Object new);
+```
 
+- Limitation - applicable for only for list objects and not the universal cursor.
 
-Limitation - applicable for only for list objects and not the universal cursor.
-
-
-06/05 -
+#### 06/05
 
 Differences between Three cursors
 
