@@ -53,7 +53,7 @@ holds only homogeneous data | holds both homogeneous and heterogeneous data
 readymade method support is not available | readymade methods are available(ex-to find the elements)
 Arrays can be used to store primitive and objects | Collections store only objects
  
-## Collection and Collection Framework-
+## Collection and Collection Framework
  
 - Collection is a group of individual objects represented as a single entity.
  
@@ -115,7 +115,7 @@ Insertion order preserved | Insertion Set-not preserved.
 
 #### 05/26
 
-### Seventh Interface -Map
+### Seventh Interface - Map
 - Map is not the child interface of collections-
 - **Implementation classes:** Map(1.2V) implementation classes 1.HashMap (1.2V) 2. WeakHashMap(1.2V) 3.IdentityHashMap(1.4V) 4.Hashtable
 Linked HashMap(1.4V) is the child interface of HashMap                                                       
@@ -125,7 +125,7 @@ Linked HashMap(1.4V) is the child interface of HashMap
 ### Eighth Interface Sorted Map(1.2V)
 - This is a child interface of map, This is mainly used when we want to represent a group of objects as key value pairs according to some sorting order then we go for Sorted Map.
 
-### Ninth Interface -
+### Ninth Interface
 - Navigable Map(1.6V) is child interface of sortedmap
 - It defines several utility methods for navigation purpose.Implementation of navigable map is tree map(1.2V) 
 
@@ -138,7 +138,7 @@ Used for sorting order | Customised sorting order
 
 > To get the collection objects one by one we have some interfaces.
 
-## Cursors is the concept.
+## Cursors is the concept
 
 - How many cursors are there in java?
  - Enumeration
@@ -146,183 +146,139 @@ Used for sorting order | Customised sorting order
  - ListIterator
 - All the above are used to get the collection objects one by one.
 
-### Utility classes-
+### Utility classes
 1. Collections -defines serveral utility methods for collection object.
 2. Arrays - defines several utility methods for Arrays object.
 
 #### 05/30
 ## Collection framework-Collection Interface
 - In the collection interface we will have the most common methods applicable for any collection object.
-•	```add(Object o)``` this is used whenever we need to add an object from the collection.
-•	```addAll(Collection c)``` this is used to add the group of objects from the collection.
-•	```remove(Object o)``` this is used whenever we need to remove an object from the collection.
-•	```removeAll(Collection c)``` this is used to remove the group of objects from the collection.
-•	```clear()``` to remove the entire objects in collection.
-•	```retailAll(Collection c)``` Except a group of objects all the other objects are to be removed then we should use ```retainAll()``` method.
+ -	```add(Object o)``` this is used whenever we need to add an object from the collection.
+ -	```addAll(Collection c)``` this is used to add the group of objects from the collection.
+ -	```remove(Object o)``` this is used whenever we need to remove an object from the collection.
+ -	```removeAll(Collection c)``` this is used to remove the group of objects from the collection.
+ -	```clear()``` to remove the entire objects in collection.
+ -	```retailAll(Collection c)``` Except a group of objects all the other objects are to be removed then we should use ```retainAll()``` method.
 
-•	To check whether the collection is empty or not then we should use ```isEmpty()```.
-•	To get the size of the collection ```size()```.
-•	To check whether a particular object is available or not in that collection ``` contains(Object o)```.
-•	To check whether a group of particular objects are available or not ```containsAll(Collection c)```.
+-	To check whether the collection is empty or not then we should use ```isEmpty()```.
+-	To get the size of the collection ```size()```.
+-	To check whether a particular object is available or not in that collection ``` contains(Object o)```.
+-	To check whether a group of particular objects are available or not ```containsAll(Collection c)```.
 
-### Coverting a collection to array-
+### Coverting a collection to array
 ``` Object a[] =c.toArray() ```
 - To iterate all the objects in the collection use Iterator which returns the iterator object.
 > Collection interface doen't contain any method to retrieve objects as ther is no concrete class which implements the colletion class directly.
 
-List Interface-
+## List Interface
+- List is child interface of collection.
+- Index play an important role in List.
+- Index - used to differentiate the duplicates and to preserve the insertion order.
+### Methods specific to list interface.
+-	To add an element at particular index ``` add(int index, Object o) ```
+-	To add group of objects from a specified index ``` addAll(int index Collection c) ```
+-	To remove an element at a particular index ``` remove(int index) ```
+-	To find a particular element in the ``` list.indexOf(Object o) ```
+-	To find the last occurence of that particular element in the ``` list-list.lastIndexOf(Object o) ```
+-	To iterate the list we use ``` ListIterator() ```
+-	To get the value at particular ``` index get(int index) ```
+-	To replace the element at the specified index ``` set(int index, Object o) ```
 
-List is child interface of collection.
-index play an important role in List.
+> From the above we can notice that list interface have its own methods in addition to the methods that are getting from the collection.
 
-Index -used to differentiate the duplicates and to preserve the insertion order.
-
-methods specific to list interface.
-
-•	To add an element at particular index- add(int index, Object o)
-•	To add group of objects from a specified index addAll(int index Collection c)
-•	To remove an element at a particular index- remove(int index)
-•	To find a particular element in the list.indexOf(Object o)
-•	To find the last occurence of that particular element in the list-list.lastIndexOf(Object o)
-•	To iterate the list we use ListIterator()
-
-•	To get the value at particular index get(int index)
-•	To replace the element at the specified index- set(int index, Object o).
-
-From the above we can notice that list interface have its own methods in addition to the methods that are getting from the collection.
-
-Index play very important role in list interface.
+> Index play very important role in list interface.
   
-Implementation classes of List--
+### Implementation classes of List
+### ArrayList
+#### Main features of ArrayList
+-	underlying data structure for arraylist - resizable or growable array.
+-	insertion order is preserved.
+-	duplicates are allowed.
+-	heterogeneous objects are allowed.
+-	null insertion is also allowed.
+- Heterogeneous objects are allowed in collection except in Treeset and TreeMap-this is because in this collection classes the objects are stored in sorting order. also, to sort any object, the other should be of same type.hencce heterogeneous objects are not allowed in treeset and treemap.
 
-ArrayList-
+### Constructors
+``` ArrayList al = new ArrayList(); ```
+- whenever we create a arraylist its default capacity is 10. But if we add 11th element then the compiler will create the new capacity arraylist by copying all the elements from the initially created arraylist and the old arraylist will be moved to garbage collection.
+- Coming to the size of newly created arraylist- capacity is calculated as - (current capacity *3/2)+1
 
-Main features of ArrayList--
-•	underlying data structure for arraylist - resizable or growable array.
-•	insertion order is preserved.
-•	duplicates are allowed.
-•	heterogeneous objects are allowed.
-•	null insertion is also allowed.
+``` ArrayList al = new ArrayList(int initialcapacity) ```
+- With the first constructor, if the sixe increases based on requirement the processing will be too slow, since all the elements have to be copied to the newly created list.
+- But if we know the capacity in prior then we can use this second constructor with initial capacity.
 
+- if we want to convert any collection object to arraylist then we can use this.
+``` ArrayList al = new ArrayList(Collection c) ```
+- purpose of collection- to hold the objects and transfer the objects accross the network.
+- first to transfer the object it must be serialized, so every collection class by default use serializable interface.
+- once after sending the object the reciever takes it and creates an exact copy of the object - which is called cloning because if anything happens to the recieved object then it cannot be regained.so cloning is must.
+- hence every collection class implements cloneable interface.
 
-heterogeneous objects are allowed in collection except in Treeset and TreeMap-this is because in this collection classes the objects are stored in sorting order.
-also, to sort any object, the other should be of same type.hencce heterogeneous objects are not allowed in treeset and treemap.
+> ArrayList and Vector collection classes implements RandaomAccess Interface. With this the data in that particular index can be obtained very soon. If our frequent operation is retrieval then we can go for ArrayList..
 
+### RandomAccess
+- It is a marker interface and doesn't contain any methods
+- ArrayList is the best choice if our frequent operation is retrieval.
+- But if our operations are adding in middle or removing an element arraylist doesn't suit, as it lags performance.
 
-Constructors-
+#### 05/31
 
-1.ArrayList al = new ArrayList();
+### Differences between arraylist and vector
+Arraylist | Vector
+-------------------------------------------- | --------------------------------------------
+Methods are non-synchronised | Methods are synchronised.
+Not threadsafe | Thread safe.
+Performance is good in arraylist | Performance but low in vector.
+Non legacy class, as it is introduced in 1.2 | Legacy class as it is introduced in 1.0
 
-whenever we create a arraylist its default capacity is 10.
-but if we add 11th element then the compiler will create the new capacity arraylist by copying all the elements from the initially created arraylist and the old arraylist will be moved to garbage collection.
-
-coming to the size of newly created arraylist- capacity is calculated as - (current capacity *3/2)+1
-
-2.ArrayList al = new ArrayList(int initialcapacity)
-
-with the first constructor, if the sixe increases based on requirement the processing will be too slow, since all the elements have to be copied to the newly created list.
-
-but  if we know the capacity in prior then we can use this second constructor with initial capacity.
-
-3.if we want to convert any collection object to arraylist then we can use this.
-
-ArrayList al = new ArrayList(Collection c)
-
-
-purpose of collection- to hold the objects and transfer the objects accross the network.
-first to transfer the object it must be serialized, so every collection class by default use serializable interface.
-onnce after sending the object the reciever takes it and creates an exact copy of the object - which is called cloning because if anything happens to the recieved object then it cannot be regained.so cloning is must.
-
-hence every collection class implements cloneable interface.
-
-
-ArrayList and Vector collection classes implements RandaomAccess Interface.
-
-with this the data in that particular index can be obtained very soon.
-
-If our frequent operation is retrieval then we can go for ArrayList..
-
-
-RandomAccess-
-
-it is a marker interface and doesn't contain any methods
-
-ArrayList is the best choice if our frequent operation is retrieval.
-
-but if our operations are adding in middle or removing an element arraylist doesn't suit, as it lags performance.
-
-05/31-
-
-Differences between arraylist and vector
-
-->Arraylist methods are non-synchronised whereas vector methods are sunchronised.
-->Array is not threadsafe, vector is thread safe.
-->performance is good in arraylist, but low in vector.
-->ArrayList is non legacy class, as it is introduced in 1.2 and Vector is legacy class as it is introduced in 1.0
-
-How to get synchronised version of ArrayList-
-
-we have a method in collections class to make the arraylist as syncronized.
-
-ArrayList al= new ArrayList();
-
-To make it as synchronized-
-
+### How to get synchronised version of ArrayList-
+- We have a method in collections class to make the arraylist as syncronized.
+```
+ArrayList al= new ArrayList(); //To make it as synchronized-
 List l1=Collections.synchronisedList(al);
+```
+> This will give us the synchronised arraylist.
 
-this will give us the synchronised arraylist.
-
-public static List synchronizedList(List al).
-
-similarly we can get the synchronised version of map and set like above.
-
+```
+public static List synchronizedList(List al)
+// similarly we can get the synchronised version of map and set like above.
 public static Set synchronizedSet(set s)
 public static Map synchronizedMap(Map m)
+```
 
-LinkedList-
+## LinkedList
+- Second interface class of collections-
+- If the main requirement is to add/remove the elements then we can go for linkedList. if our frequent operation is retrieval it is not the best option.
+### Properties:
+1. Underlying Data structure is Doubly Linked List.
+2. Insertion order is preserved.
+3. Duplicates are allowed.
+4. Null values are allowed.
+5. Heterogeneous data types are allowed.
 
-second interface class of collections-
+- This implements both serializable and cloneable interfaces.
+- LinkedList used to implement stacks and queues.
+- To implement these LinkedList have 6 methods which are used only in LinkedList class but not anywhere.
 
-If the main requirement is to add/remove the elements then we can go for linkedList. if our frequent operation is retrieval it is not the best option.
+```
+	void addFirst(Object o)
+	void addLast(Object o)
+	Object getFirst()
+	Object getLast()
+	Object removeFirst()
+	Object removeLast()
+```
 
-properties-
-1.Underlying Data structure is Doubly Linked List.
-2.Insertion order is preserved.
-3.Duplicates are allowed.
-4.Null values are allowed.
-5.Heterogeneous data types are allowed.
+### Constructors
+``` LinkedList l1= new LinkedList(); ```
+- To allow the inter conversion from one collection to other collection--
+``` Linkedlist L1 = new LinkedList(Collection c) ```
+- Set method is used to replace.
+- Differences between ArrayList and LinkedList
+- Arraylist underlying data structure - resizeable or growable array, Linked List-underlying data structure- double linked list.
 
-This implements both serializable and cloneable interfaces.
-
-LinkedList used to implement stacks and queues.
-
-To implement these LinkedList have 6 methods which are used only in LinkedList class but not anywhere.
-
-•	void addFirst(Object o)
-•	void addLast(Object o)
-•	Object getFirst()
-•	Object getLast()
-•	Object removeFirst()
-•	Object removeLast()
-
-Constructors-
-
-->LinkedList l1= new LinkedList();
-
--> to allow the inter conversion from one collection to other collection--
-
-Linkedlist L1 = new LinkedList(Collection c)
-
-set method is used to replace.
-
-Differences between ArrayList and LinkedList--
-
-arraylist underlying data structure - resizeable or growable array, Linked List-underlying data structure- double linked list.
-
-
-Vector class-
-
-Vector is synchronised, which is thread safe
+### Vector class
+- Vector is synchronised, which is thread safe
 
 Vector methods-
 
