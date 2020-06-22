@@ -21,37 +21,27 @@ for example ``` Employee emp[] = new Employee[10000]; ``` this works well as the
 3. Underlying data structure in not in arrays
 
 > Point 2-Homogeneous data element means ``` emp[0] = new Employee(); ``` -> this is valid.
-
-But emp[1] = new Customer();this is invalid -> compiler throws an error stating incompatible type.
-
-But this above problem can be solved by using Object arrays.
-
+- But ```emp[1] = new Customer();``` this is invalid -> compiler throws an error stating incompatible type.
+- The above problem can be solved by using Object arrays.
+```
 Object obj[] = new Object();
 
 Now we can add heterogenous data elements to obj.
 obj[0] = new Employee();   -> valid.
 obj[1] = new Customer();   -> valid.
-
-Point 3-- Underlying Data structure.
-
-In array if we need to search anything we need to write the code manually to search it or if we need to sort the data then we need to 
+```
+## Underlying Data structure.
+- In array if we need to search anything we need to write the code manually to search it or if we need to sort the data then we need to 
 write the program for sorting as well.(no readymade method support)
+- but this is not the case in collections.
+- Collections have some built in functions to do these operations like contains().
+- Collections are growable in nature, allows both homogeneous and heterogeneous data elements, this have the readymade method support to work on different functionalities.
 
-but this is not the case in collections.
+#### 05/25
 
-Collections have some built in functions to do these operations like contains().
-
-Collections are growable in nature, allows both homogeneous and heterogeneous data elements, this have the readymade method support to work on different functionalities.
-
-05/25-
-
-Differences between arrays and collections :
-
-Collections are growable in nature based on our requirement.
-
-collections concepts are not up to the mark based on performance wise
-
-Differences between Arrays and Collections
+## Differences between arrays and collections :
+- Collections are growable in nature based on our requirement.
+- Collections concepts are not up to the mark based on performance wise
 
 ### Differences between array and collections
 Arrays | Collections
@@ -63,179 +53,122 @@ holds only homogeneous data | holds both homogeneous and heterogeneous data
 readymade method support is not available | readymade methods are available(ex-to find the elements)
 Arrays can be used to store primitive and objects | Collections store only objects
  
-# Collection and Collection Framework-
+## Collection and Collection Framework-
  
- Collection is a group of individual objects represented as a single entity.
+- Collection is a group of individual objects represented as a single entity.
  
- What is collection framework ??
+## What is collection framework ??
+- It defines several classes and interfaces which are used to define a collection.
+- Collection is not a new concept, it is also present in other languages
+- In java it is collection and in C++ it is Container
+- Java- Collection framework and in C++ STL(Standard Template Library).[Library means a group of classes and interfaces].
  
- It defines several classes and interfaces which are used to define a collection.
+## **9** Key interfaces in Collection Framework -
  
- Collection is not a new concept, it is also present in other languages
+### First Interface is **Collection**
+1. Collection-defines the most common methods applicable for all the the collections like addd, isempty etc.
+2. In general collection interface is considered as the root interface for collection.
  
- In java it is collection and in C++ it is Container
+> Note : There is no concrete class that implements the collection interface directly.
  
- Java- Collection framework and in C++ STL(Standard Template Library).[Library means a group of classes and interfaces].
- 
- 
- ## 9 Key interfaces in Collection Framework -
- 
- # First Interface is collection
- 
- 1.Collection-defines the most common methods applicable for all the the collections like addd, isempty etc.
- 2.In general collection interface is considered as the root interface for collection.
- 
- Note : There is no concrete class that implements the collection interface directly.
- 
- # Diff between Collection and Collections :
- 
- 
-Collection - interface, collections -class, this will have pre defined methods to work on collections
+### Diff between Collection and Collections :
+- Collection - interface, collections -class, this will have pre defined methods to work on collections
+- For example think of an arraylist we dont have any method to sort which means it is not defined in arraylist.
+- but we can use as ``` Collections.sort(ArrayList) ``` to sort it.
+- This is present in java.util.package.
 
-For example think of an arraylist we dont have any method to sort which means it is not defined in arraylist.
+### Second Interface - List.(1.2)
+- duplicates are allowed.
+- Insertion order to be preserved.
+- Implementation classes of List are ArrayList(1.2), LinkedList(1.2), Vector[1.0] and Stack[1.0](Vector and stack are called as Legacy classes as they exist from 1.0 Version) All others are from 1.2V(Collection, List,ArrayList,LinkedList)
+> The classes that exists from older versions are called as Legacy classes.
 
-but we can use as Collections.sort(ArrayList) to sort it.
+### Third Interface is Set(1.2)
+- Duplicates are not allowed.
+- Insertion not preserved
+- Implementation classes Hashset(1.2V) and LinkedHashset(1.4V)
 
-This is present in java.util.package.
+### Diff between List and Set
+List | Set
+---------------------------------- | ------------------------------------------
+Dupicates are allowed | Dupicates not allowed.
+Insertion order preserved | Insertion Set-not preserved.
 
-# Second Interface - List.(1.2)
+### Fourth Interface -Sorted set(1.2V)
+- This is the child interface of Set(1.2V), when there is a requirement in which the duplicates are not allowed and insertion order need to be preserved then we go for Sortedset.
 
-1.duplicates are allowed.
-2.Insertion order to be preserved.
+### Fifth Interface -Navigable Set(1.6V)
+- It is the child interface of Sorted Set and it defines several navigation methods.
+- Implementation of the Navigable set is Treeset(1.2V)
 
-Implementation classes of List are ArrayList(1.2), LinkedList(1.2), Vector[1.0] and Stack[1.0](Vector and stack are called as Legacy classes as they exist from 1.0 Version) All others are from 1.2V(Collection, List,ArrayList,LinkedList)
+### Sixth Interface is Queue(1.5V)
+- Implementation classes of Queue are Priority Queue(1.5V) and Blocking Queue(1.5V) and Blocking Queue have two more implementation classes
+- Linked Blocking Queue(1.5V) and Priority Blocking Queue(1.5V)
 
-The classes that exists from older versions are called as Legacy classes.
+> All the above collection Interfaces are used to represent as group of  individual objects 
 
-# Third Interface is Set(1.2)
+- Queue is best used when we need to do any operation in First In First Out Order.
+- Before processing if we want to store a group of individual objects, then we go for Queue.
+- For example consider a message to be sent for 100 people then the recepients should be stored in prior before sending then we can use Queue interface.
 
-1.Duplicates are not allowed.
-2.Insertion not preserved
+> If we want to represent a group of objects as Key value pairs then we got for **Map Interface**.
 
-Implementation classes Hashset(1.2V) and LinkedHashset(1.4V)
+#### 05/26
 
-
-Diff between List and Set
-
-List-Dupicates are allowed, Set-not allowed.
-List-Insertion order preserved, Set-not preserved.
-
-
-# Fourth Interface -Sorted set(1.2V)
-
-This is the child interface of Set(1.2V), when there is a requirement in which the duplicates are not allowed and insertion order need to be preserved then we go for Sortedset.
-
-# Fifth Interface -Navigable Set(1.6V)
-It is the child interface of Sorted Set and it defines several navigation methods.
-
-Implementation of the Navigable set is Treeset(1.2V)
-
-# Sixth Interface is Queue(1.5V)
-
-Implementation classes of Queue are Priority Queue(1.5V) and Blocking Queue(1.5V) and Blocking Queue have two more implementation classes
-
-Linked Blocking Queue(1.5V) and Priority Blocking Queue(1.5V)
-
-Note - All the above collection Interfaces are used to represent as group of  individual objects 
-
-Queue is best used when we need to do any operation in First In First Out Order.
-
-Before processing if we want to store a group of individual objects, then we go for Queue.
-
-For example consider a message to be sent for 100 people then the recepients should be stored in prior before sending then we can use
-
-Queue interface.
-
-If we want to represent a group of objects as Key value pairs then we got for Map Interface.
-
-
-
-05/26
-
-# Seventh Interface -Map
-
-Map is not the child interface of collections-
-
-Implementation classes
-
-Map(1.2V) implementation classes 1.HashMap (1.2V) 2. WeakHashMap(1.2V) 3.IdentityHashMap(1.4V) 4.Hashtable
+### Seventh Interface -Map
+- Map is not the child interface of collections-
+- **Implementation classes:** Map(1.2V) implementation classes 1.HashMap (1.2V) 2. WeakHashMap(1.2V) 3.IdentityHashMap(1.4V) 4.Hashtable
 Linked HashMap(1.4V) is the child interface of HashMap                                                       
+- child class of Hashtable is properties, Hashtable comes from Old Legacy class Dictionary
+- Dictionay,HashTable and Properties classes are from version 1.0 and so they are called as Legacy classes.
 
-child class of Hashtable is properties, Hashtable comes from Old Legacy class Dictionary
+### Eighth Interface Sorted Map(1.2V)
+- This is a child interface of map, This is mainly used when we want to represent a group of objects as key value pairs according to some sorting order then we go for Sorted Map.
 
+### Ninth Interface -
+- Navigable Map(1.6V) is child interface of sortedmap
+- It defines several utility methods for navigation purpose.Implementation of navigable map is tree map(1.2V) 
 
-Dictionay,HashTable and Properties classes are from version 1.0 and so they are called as Legacy classes.
+#### 05/29
+- Overview of collection framework
+### What is the difference between comparable and comparator?
+Comparable | Comparator
+------------------------------------------ | --------------------------------------------
+Used for sorting order | Customised sorting order
 
+> To get the collection objects one by one we have some interfaces.
 
-# Eighth Interface Sorted Map(1.2V)
+## Cursors is the concept.
 
-child interface of Map-
+- How many cursors are there in java?
+ - Enumeration
+ - Iterator
+ - ListIterator
+- All the above are used to get the collection objects one by one.
 
-This is mainly used when we want to represent a group of objects as key value pairs according to some sorting order then we go for Sorted Map.
+### Utility classes-
+1. Collections -defines serveral utility methods for collection object.
+2. Arrays - defines several utility methods for Arrays object.
 
+#### 05/30
+## Collection framework-Collection Interface
+- In the collection interface we will have the most common methods applicable for any collection object.
+•	```add(Object o)``` this is used whenever we need to add an object from the collection.
+•	```addAll(Collection c)``` this is used to add the group of objects from the collection.
+•	```remove(Object o)``` this is used whenever we need to remove an object from the collection.
+•	```removeAll(Collection c)``` this is used to remove the group of objects from the collection.
+•	```clear()``` to remove the entire objects in collection.
+•	```retailAll(Collection c)``` Except a group of objects all the other objects are to be removed then we should use ```retainAll()``` method.
 
-# Ninth Interface -
+•	To check whether the collection is empty or not then we should use ```isEmpty()```.
+•	To get the size of the collection ```size()```.
+•	To check whether a particular object is available or not in that collection ``` contains(Object o)```.
+•	To check whether a group of particular objects are available or not ```containsAll(Collection c)```.
 
-Navigable Map(1.6V)--
-
-child interface of sortedmap
-
-It defines several utility methods for navigation purpose.Implementation of navigable map is tree map(1.2V) 
-
-
-05/29-
-
-Overview of collection framework
-
-What is the difference between comparable and comparator?
-
-Comparable meant for default sorting order.
-
-Comparator meant for customised sorting order.
-
-To get the collection objects one by one we have some interfaces.
-
-# Cursors is the concept.
-
-How many cursors are there in java?
-
-•	Enumeration
-•	Iterator
-•	ListIterator
-
-All the above are used to get the collection objects one by one.
-
-Utility classes-
-
-1.Collections -defines serveral utility methods for collection object.
-2.Arrays - defines several utility methods for Arrays object.
-
-
-05/30--
-
-Collection framework-Collection Interface
-
-In the collection interface we will have the most common methods applicable for any collection object.
-
-•	add(Object o) -this is used whenever we need to add an object from the collection.
-•	addAll(Collection c) - this is used to add the group of objects from the collection.
-•	remove(Object o) - this is used whenever we need to remove an object from the collection.
-•	removeAll(Collection c)-this is used to remove the group of objects from the collection.
-•	clear() - to remove the entire objects in collection.
-•	retailAll(Collection c)-Except a group of objects all the other objects are to be removed then we should use retainAll() method.
-
-•	To check whether the collection is empty or not then we should use isEmpty().
-•	To get the size of the collection - size().
-•	To check whether a particular object is available or not in that collection - contains(Object o).
-•	To check whether a group of particular objects are available or not -containsAll(Collection c).
-
-Coverting a collection to array-
-
-Object a[] =c.toArray().
-
-To iterate all the objects in the collection use Iterator which returns the iterator object.
-
-✔Collection interface doen't contain any method to retrieve objects as ther is no concrete class which implements the colletion class directly.
+### Coverting a collection to array-
+``` Object a[] =c.toArray() ```
+- To iterate all the objects in the collection use Iterator which returns the iterator object.
+> Collection interface doen't contain any method to retrieve objects as ther is no concrete class which implements the colletion class directly.
 
 List Interface-
 
