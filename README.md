@@ -5,23 +5,22 @@
 
 ## Need of Collections in java:
 
-- **Problem** storing thousands of strings ina program
+- **Problem** storing thousands of strings in a program
 - Individual String declaration is hard, reduces readbility, not a convention
-- We can use array for it ```java  Employee emp[] = new Employee[10000]; ```
+- We can use array for it ``` Employee emp[] = new Employee[10000]; ```
 - But in array we need to declare size, what if we need it dynamically
 - **Collections** are used for this.
 
 - Think of situation where we need to store 10000 values, we cannot go for variable declaration approach as it reduces readabilty and its not a good practice to declare more variables.
 Hence we go for Array approach.In array we can store all the values by defining a single variable.
-for example Employee emp[] = new Employee[10000]; this works well as the size is defined initially.But what happens if we need to store more than 10000????
+for example ``` Employee emp[] = new Employee[10000]; ``` this works well as the size is defined initially.But what happens if we need to store more than 10000????
 
-There are some limitations in Arrays:
+## There are some limitations in Arrays:
+1. The size should be known in prior.
+2. Only Homogeneous data elements allowed in arrays.
+3. Underlying data structure in not in arrays
 
-1.The size should be known in prior.
-2.Only Homogeneous data elements allowed in arrays.
-3.Underlying data structure in not in arrays
-
-Point 2-Homogeneous data element means emp[0] = new Employee(); -> this is valid.
+> Point 2-Homogeneous data element means ``` emp[0] = new Employee(); ``` -> this is valid.
 
 But emp[1] = new Customer();this is invalid -> compiler throws an error stating incompatible type.
 
