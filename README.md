@@ -941,161 +941,118 @@ from 1.5v onwards linked list class also implements Queue Interface.
 linkedlist based implementation of queue always follows fifo order
 
 
-Queue interface specific methods
+### Queue interface specific methods
+```
+boolean offer(Object o) // to add an object in to queue
+Object peek() // to return head head element of the queue without deleting, if queue is empty this returns null
+Object Element() // return the head eleament of the queue without deleting, but run time exception occurs if queue is empty. RE-NoSuchElementException
+Object poll() // to remove and return the head element of the element, if queue is empty then returns null,
+Object remove() // to remove and retun the head element of the queue, but run time exception occurs if queue is empty.RE-NoSuch ElementException
+```
+
+### properties
+- default and customised sorting order allowed(priority can be both)
+- insertion order not preserved and based on some priority
+- null insertion not allowed, even as the first element also
+- duplicates not allowed.
 
 
-boolean offer(Object o)- to add an object in to queue
-Object peek()- to return head head element of the queue without deleting, if queue is empty this returns null
-Object Element() - return the head eleament of the queue without deleting, but run time exception occurs if queue is empty. RE-NoSuchElementException
-Object poll() - to remove and return the head element of the element, if queue is empty then returns null,
-Object remove() -to remove and retun the head element of the queue, but run time exception occurs if queue is empty.RE-NoSuch ElementException
+### 1.6V Enhancements
+- Navigableset(I)
+- Navigable Map(I)
+> The above two are introduced are part of 1.6V
 
+### NavigableSet -
+- It is child interface of SortedSet and it defines several methods for navigation purposes
+- Methods in NavigableSet:
+```
+floor(e) // returns the lowest element which is <=e
+lower(e) // returns the lowest element which is <e
+ceiling(e) // returns the highest element which is >=e
+higher(e) // returns the highest element which is >e
+pollFirst() // remove and return the first element 
+pollLast() // remove and return last element.
+descendingSet() // returns NavigableSet in reverse order
+```
 
-properties-
+### NavigableMap -
+- It is the child interface of Sorted Map which is introduced in 1.6V
+- It defines several methods for navigation purposes
+- Navigable Map defines the following methods
+```
+floorKey(e) // returns the lowest key which is <=e
+lowerKey(e) // returns the lowest key which is <e
+ceilingKey(e) // returns the highest key which is >=e
+higherKey(e) // returns the highest key which is >e
+pollFirstEntry() // remove and return the first entry 
+pollLastEntry() //remove and return last entry.
+descendingMap() // returns NavigableMap in reverse order
+```
 
-default and customised sorting order allowed(priority can be both)
-insertion order not preserved and based on some priority
-null insertion not allowed, even as the first element also
-duplicates not allowed.
+### Utility Classes
+- Collections class defines several utilty methods for collection objects like Sorting, Searching, reversing etc 
 
+### Sorting elements of list:
 
-1.6V Enhancements
+- Collections class defines the following two sort methods 
+- ```public static void sort(List l)``` To sort based on default natural sorting order In this case list should compulsory contain homogeneous and comparable objects otherwise we will get runtime exception saying ClassCastException
+- List should not contain null values, if it contains null, while comparing we will get null pointer exception
+- ```public static void sort(List l, comparator C)``` to sort based on Customised sorting order
 
-Navigableset(I)
-Navigable Map(I)
+## Searching Elements of List-
+### Collections defines the following binary search methods
+- ```public static int binarySearch(List l, Object target)``` If the list is sorted according to default natural sorting order then have to use this method
+- ```public statuc int binarySearch(List l, Object target, Compararator c)``` we have to use this method if the list is sorted according to customised sorting order
 
-The above two are introduced are part of 1.6V
-
-NavigableSet -
-
-It is child interface of SortedSet and it defines several methods for navigation purposes
-
-Methods in NavigableSet:
-
-floor(e) - returns the lowest element which is <=e
-lower(e) -returns the lowest element which is <e
-ceiling(e) -returns the highest element which is >=e
-higher(e) -returns the highest element which is >e
-pollFirst() - remove and return the first element 
-pollLast()-remove and return last element.
-descendingSet() - returns NavigableSet in reverse order
-
-
-NavigableMap -
-
-It is the child interface of Sorted Map which is introduced in 1.6V
-It defines several methods for navigation purposes
-
-Navigable Map defines the following methods
-
-
-floorKey(e) - returns the lowest key which is <=e
-lowerKey(e) -returns the lowest key which is <e
-ceilingKey(e) -returns the highest key which is >=e
-higherKey(e) -returns the highest key which is >e
-pollFirstEntry() - remove and return the first entry 
-pollLastEntry()-remove and return last entry.
-descendingMap() - returns NavigableMap in reverse order
-
-Utility Classes
-
-Collections :
-
-Collections class defines several utilty methods for collection objects like Sorting, Searching, reversing etc 
-
-Sorting elements of list:
-
-Collections class defines the following two sort methods 
-
-public static void sort(List l) - To sort based on default natural sorting order In this case list should compulsory contain homogeneous and comparable objects otherwise we will get runtime exception saying ClassCastException
-
-List should not contain null values, if it contains null, while comparing we will get null pointer exception
-
-->public static void sort(List l, comparator C)
-
-to sort based on Customised sorting order
-
-
-Searching Elements of List-
-
-
-Collections defines the following binary search methods
-
-public static int binarySearch(List l, Object target) - If the list is sorted according to default natural sorting order then have to use this method
-
-public statuc int binarySearch(List l, Object target, Compararator c) - we have to use this method if the list is sorted according to customised sorting order
-
-Conclusions:
-
-->The above search methods internally will use binary search algorithm 
-
-->Successful search returns index.
-
-->Unsuccessful search returns insertion point
-
-->Insertion point is the location where we can place the target element in sorted list.
-
-->Before calling binary search method compulsory list should be sorted otherwise we will get unpredictable results
-
-->If the list is sorted according to comparartor , then at the time of search operation also we have to pass same comparartor object
+### Conclusions:
+- The above search methods internally will use binary search algorithm 
+- Successful search returns index.
+- Unsuccessful search returns insertion point
+- Insertion point is the location where we can place the target element in sorted list.
+- Before calling binary search method compulsory list should be sorted otherwise we will get unpredictable results
+- If the list is sorted according to comparartor , then at the time of search operation also we have to pass same comparartor object
 otherwise we will get unpredictable results.
+- For the list of n elements in the case of binary search methods 
+	1. successful search resukt range is 0 to (n-1)
+	2. Unsuccessful search result range is -(n+1) to -1
+	3. Total result range is -(n+1) to (n-1)
 
 
-For the list of n elements in the case of binary search methods 
-1.successful search resukt range is 0 to (n-1)
-2.Unsuccessful search result range is -(n+1) to -1
-3.Total result range is -(n+1) to (n-1)
+### Reversing elements of List
 
+``` public static void reverse(List l)```
+- reverse() vs reverseOrder()
+- We can use reverse method to reverse order of elements of list whereas we can use reverseOrder method to get reversed Comparator
+```Comparator c1= Collections.reverseOrder(Comparator c)```
+- Another utilty class present in Collections is Arrays()
+- Arrays class is an utility class to define several utility methods for array objects
 
-Reversing elements of List
+### Sorting elements of Array
+- Arrays class defines the following sort methods to sort elements of primitive and object type arrays
+```
+public static void sort(Primitive[] p) // to sort according to natural sorting order
+public static void sort(Object[] o) // to sort according to natural sorting order.
+public static void sort(Object[] o, Comparator c) //to sort according to customised sorting order.
+```
+> We can sort primitive arrays only based on default natural sorting order but for objects we can do both sorting i.e default natural sorting order or customised sorting order
 
-public static void reverse(List l)
-
-reverse() vs reverseOrder()
-
-We can use reverse method to reverse order of elements of list whereas we can use reverseOrder method to get reversed Comparator
-
-Comparator c1= Collections.reverseOrder(Comparator c)
-
-Another utilty class present in Collections is Arrays()
-
-Arrays class is an utility class to define several utility methods for array objects
-
-1.Sorting elements of Array
-
-Arrays class defines the following sort methods to sort elements of primitive and object type arrays
-
-public static void sort(Primitive[] p) - to sort according to natural sorting order
-public static void sort(Object[] o) - to sort according to natural sorting order.
-public static void sort(Object[] o, Comparator c)- to sort according to customised sorting order.
-
-# Note
-
-We can sort primitive arrays only based on default natural sorting order but for objects we can do both sorting i.e default natural sorting order or customised sorting order
-
-# Searching the elements of Array
-
-Arrays class deines the following binarySearch methods
-
+### Searching the elements of Array
+- Arrays class deines the following binarySearch methods
+```
 public static int binarySearch(primitive[] p, primitive target)
 public static int binarySearch(Object[] a, Object target)
 public static int binarySearch(Object[] p, Object target, Comparator c)
+```
+> All rules Arrays class binary search methods are exactly same as BinarySearch methods
 
-Note : All rules Arrays class binary search methods are exactly same as BinarySearch methods
+### Conversion of array to list
 
-Conversion of array to list
-
-public static list asList(Object o)
-
-Strictly speaking this method wont create an independent list object
-
-For the existing array we are getting list view
-
-By using array reference if we perform any change automatically that change will be reflected to the list similarly by using list reference if we perform any change that change will be reflected automatically to the array
-
-By using list reference we cant perform any operation which varies the size otherwise we will get runtime expection saying UnsupportedOperationException
-
-By using list reference we are not allowed  to replace with heterogeneous objects otherwise we will get runtime exception saying ArrayStoreException
+``` public static list asList(Object o) ```
+- Strictly speaking this method wont create an independent list object
+- For the existing array we are getting list view
+- By using array reference if we perform any change automatically that change will be reflected to the list similarly by using list reference if we perform any change that change will be reflected automatically to the array
+- By using list reference we cant perform any operation which varies the size otherwise we will get runtime expection saying UnsupportedOperationException
+- By using list reference we are not allowed  to replace with heterogeneous objects otherwise we will get runtime exception saying ArrayStoreException
 
                                         ## End of Collections
 -------------------------------------------------------------------------------------------------------------------------------------
