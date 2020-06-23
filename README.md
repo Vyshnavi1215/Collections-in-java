@@ -57,13 +57,13 @@ Arrays can be used to store primitive and objects | Collections store only objec
  
 - Collection is a group of individual objects represented as a single entity.
  
-## What is collection framework ??
+## What is collection framework?
 - It defines several classes and interfaces which are used to define a collection.
 - Collection is not a new concept, it is also present in other languages
 - In java it is collection and in C++ it is Container
 - Java- Collection framework and in C++ STL(Standard Template Library).[Library means a group of classes and interfaces].
  
-## **9** Key interfaces in Collection Framework -
+## **9** Key interfaces in Collection Framework
  
 ### First Interface is **Collection**
 1. Collection-defines the most common methods applicable for all the the collections like addd, isempty etc.
@@ -390,308 +390,205 @@ public void add(Object new);
 
 #### 06/05
 
-Differences between Three cursors
+- Differences between Three cursors
 
-06/06-
+#### 06/06
+### Comparision between three cursors based on some properties :
 
-Comparision between three cursors based on some properties :
-
-Property-Applicable for :
-
-1.Enumeration applicable only for legacy classes.
-2.Iteration applicable for any collection class.(also called as Universal Cursor)
-3.ListIterator applicable only for List classes.
-
-Property- Movement :
-
+### Property-Applicable for:
+1. Enumeration applicable only for legacy classes.
+2. Iteration applicable for any collection class.(also called as Universal Cursor)
+3. ListIterator applicable only for List classes.
+### Property- Movement:
 1. Enumeration -only forward(single direction)
-2.Iterator - only forward(Single direction)
-3.ListIterator - both directions(bidirectional)
+2. Iterator - only forward(Single direction)
+3. ListIterator - both directions(bidirectional)
+### Property- Accessibility
+1. Enumeration -only read operation.
+2. Iterator- both read and remove.
+3. ListIterator, Read, remove, replace and add elements
+### Property - How we can get this cursors ?
+1. Enumeration -elements method of vector class.
+2. Iterator- iterator method of collection Interface.
+3. ListIterator - by using listIterator() method of List Interface
+### Property - methods in cursors
+1. Enumeration - two methods ``` hasNextElement(), nextElement()```.
+2. Iterator - three methods ``` hasNext(),next(),remove()```.
+3. List Iterator- 9 methods.
+### Propery -legacy.
+1. Enumeration- Yes Legacy class(1.0)
+2. Iterator- No 1.2V
+3. List Iterator- No 1.2 V
+> Interfaces references can be used to hold interface class objets
+> We can print implemented class of interface by using ``` .getClass().getName(); ```
 
-Property- Accessibility-
+## Set
+- Set Interface doesn't contain any new methods, we have to use the methods that are coming from collection Interface as set is the child interface of Collection
+### HashSet()
+- Underlying data structure - HashTable
+- Duplicates are not allwoed.
+- Insertion order not preserved, but it is based on Hashcode.
+- Heterogeneous objects are allowed.
+- Null Insertion is allowed.
+- implements serializable and cloneable.
+- Hashset is the best choice if the frequent operation is search operation
+### Constructors of HashSet()
+- ``` Hashset h = new HashSet(); ```
+	- create an empty Hashset with default capacity 16 and load factor -0.75(fillratio)
+	- fill ratio determines determines at which point the new Hashset to be created when for the given capacity of the hashset.
+- ```HashSet h = new Hashset(int initialcapacity); ```
+	- creates an Hashset Object with the initial capacity
+- ``` Hashset h = new Hashset(int initialcapacity float fillRatio) ```
+	- creates the hashset with the specified capacity and the fillratio after which new Hashset to be created.
+- ``` Hashset h = new Hashset(Collection c) ```
+	- To convert any collection to Hashset above constructor is used.
+> Insertion in hashset is based on hashcode.
 
-1.Enumeration -only read operation.
-2.Iterator- both read and remove.
-3.ListIterator, Read, remove, replace and add elements
+### LinkedHashset
+### Properties
+- Insertion order is preserved.
+- Duplicates are not allowed.
+- Underlying datastructure is Hashtable + Linked List
+- Introduced in 1.4 version.
+### Usage of LinkedHashSet-
+- Cache based applications
+### SortedSet Details
+- If we want to store group of objects according to some sorting order then we need to go for SortedSet
+- Sorted set specific methods are applicable on Sortedset implementation classes- TreeSet
+```
+Object first() //returns the first element of the object.
+Object last () //returns the first element of the object.
+sortedSet headSet(Object obj) // returns the sortedSet whose elements are less than obj
+sortedSet tailSet(Object obj) // returns the SortedSet ehole elements are >= obj.
+sortedSet Subset(Object obj1, Object obj2) // returns the SortedSet whole elements are >=obj1 and <obj2
+comparator() //return comparator object that describes the underlying sorting technique, if we are using default sorting order then this will return null.
+```
+> Default sorting order for numbers is ascending order and for strings it is alphabetical order.
+### TreeSet
+### Properties
+- Underlying data structure is Balanced tree
+- It doesnot allow heterogeneous data elements
+- Null allowed only once.
+### Constructors 
+- ```TreeSet t = new TreeSet();```
+	- default empty treeset will be created with default natural sorting order
+- ```TreeSet t = new TreeSet(Comparator C)```
+	- treeset will be created with the customised sorting order
+- ```TreeSet t = new TreeSet(Collection C)```
+	- to convert any collection to Treeset.
+- ``` TreeSet t = new TreeSet(SortedSet S)```
+	- to convert given sortedset to treeset.
+### Null acceptance in Treeset-
+- If we are going to add null as first element in the empty treeset then it is allowed, else we will get nullpointer exception
+- Null cannot be added in non empty treeset
 
-Property - How we can get this cursors ?
+- If we are depending on natural sorting order then the objects should be homogeneos and comparable, otherwise we will get ClassCastException at runtime.
+- An object is said to be comparable if and only if the corresponding class implements java.lang.comparable Interface.
 
-1.Enumeration -elements method of vector class.
-2.Iterator- iterator method of collection Interface.
-3.ListIterator - by using listIterator() method of List Interface
-
-Property - methods in cursors-
-
-1.Enumeration - two methods -hasNextElement(), nextElement().
-2.Iterator - three methods - hasNext(),next(),remove().
-3.List Iterator- 9 methods.
-
-Propery -legacy.
-
-1.Enumeration- Yes Legacy class(1.0)
-2.Iterator- No 1.2V
-3.List Iterator- No 1.2 V
-
-
-# Note :
-
-Interfaces references can be used to hold interface class objets
-
-how to print corresponding implemented class of interface.
-
-.getClass().getName();
-
-
-# Set
-
-Set Interface doesn't contain any new methods, we have to use the methods that are coming from collection Interface as set is the child interface of Collection
-
-
-HashSet()
-
-1. Underlying data structure - HashTable
-2.Duplicates are not allwoed.
-3.Insertion order not preserved, but it is based on Hashcode.
-4.Heterogeneous objects are allowed.
-5.Null Insertion is allowed.
-6.implements serializable and cloneable.
-7.Hashset is the best choice if the frequent operation is search operation
-
-Constructors of HashSet()
-
-1.Hashset h = new HashSet();
-
-create an empty Hashset with default capacity 16 and load factor -0.75(fillratio)
-
-fill ratio determines determines at which point the new Hashset to be created when for the given capacity of the hashset.
-
-2.HashSet h = new Hashset(int initialcapacity);
-
-creates an Hashset Object with the initial capacity
-
-3.Hashset h = new Hashset(int initialcapacity float fillRatio)
-
-creates the hashset with the specified capacity and the fillratio after which new Hashset to be created.
-
-4.Hashset h = new Hashset(Collection c)
-
-To convert any collection to Hashset above constructor is used.
-
-Insertion is hashset is based on hashcode.
-
-# LinkedHashset -
-
-Properties- 
-
-1.Insertion order is preserved.
-2.Duplicates are not allowed.
-3.Underlying datastructure is Hashtable + Linked List
-4.Introduced in 1.4 version.
-
-Usage of LinkedHashSet-
-
-Cache based applications
-
-SortedSet Details
-
-If we want to store group of objects according to some sorting order then we need to go for SortedSet
-
-Sorted set specific methods are applicable on Sortedset implementation classes- TreeSet
-
-1.Object first() -returns the first element of the object.
-2.Object last () -returns the first element of the object.
-3.sortedSet headSet(Object obj) - returns the sortedSet whose elements are less than obj
-4.sortedSet tailSet(Object obj) - returns the SortedSet ehole elements are >= obj.
-5.sortedSet Subset(Object obj1, Object obj2) - returns the SortedSet whole elements are >=obj1 and <obj2
-6.comparator() -return comparator object that describes the underlying sorting technique, if we are using default sorting order then this will return null.
-
-Default sorting order for numbers is ascending order and for strings- alphabetical order.
-
-TreeSet
-
-Properties -
-
-->Underlying data structure is Balanced tree
-->It doesnot allow heterogeneous data elements
-->Null allowed only once.
-
-Constructors 
-
-1.TreeSet t = new TreeSet();
-->default empty treeset will be created with default natural sorting order
-
-2.TreeSet t = new TreeSet(Comparator C)
-->treeset will be created with the customised sorting order
-
-3.TreeSet t = new TreeSet(Collection C)
-->to convert any collection to Treeset.
-
-4.TreeSet t = new TreeSet(SortedSet S)
-->to convert given sortedset to treeset.
-
-Null acceptance in Treeset-
-->If we are going to add null as first element in the empty treeset then it is allowed, else we will get nullpointer exception
-->Also, null cannot be added in non empty treeset
-
-->If we are depending on natural sorting order then the objects should be homogeneos and comparable, otherwise we will get ClassCastException at runtime.
-
-An object is said to be comparable if and only if the corresponding class implements java.lang.comparable Interface.
-
-Comparable Interface -
-
-This interface is present in java.lang package, contains only one method
-
+### Comparable Interface -
+- This interface is present in java.lang package, contains only one method
+```
 compareTo(Object obj)
-
 public int compareTo(Object obj)
-
 obj1.coompareTo(obj2)
-
 returns
 -1 iff obj1 has to come before obj2
  1 iff obj1 has to come after obj2
  0 iff both are equal
+ ```
+ - If we are depending on default natural sorting order internally JVM will call compareTo() method while inserting elements in to the TreeSet.Hence the objects should be homogeneous and comparable.
+- Comparable meant for default natural sorting order where as Comparator meant for the customised sorting order.
  
- 
- If we are depending on default natural sorting order internally JVM will call compareTo() method while inserting elements in to the TreeSet.Hence the objects should be homogeneous and comparable.
- 
- Comparable meant for default natural sorting order where as Comparator meant for the customised sorting order.
- 
- 06/07
- 
- If we are not satisfied with default natural sorting order or if we want customised sorting order then we have to go for Comparator
- 
- Comparator interface is present in java.util package
- 
- It defines two methods compare and equals
- 
- compare works same as compareTo
- 
- For a class implemeting Comparator it should define only the logic for Compare Method, equal method is optional.
- 
- Consider an example
- 
+#### 06/07
+- If we are not satisfied with default natural sorting order or if we want customised sorting order then we have to go for Comparator 
+- Comparator interface is present in java.util package
+- It defines two methods **compare** and **equals**
+- compare works same as compareTo
+- For a class implemeting Comparator it should define only the logic for Compare Method, equal method is optional.
+- Consider an example
+```
  class myComparator implements Comparable
 {
-
 public int compare(){
-}
-}
-Here any class is the child class of Object class, since object class contains the implementation of equal method, and every class is inherited from Object, the implementation will be present already
+	}
+} 
+```
+- Here any class is the child class of Object class, since object class contains the implementation of equal method, and every class is inherited from Object, the implementation will be present already
+> Comparator- to implemet our own sorting techniques
 
-Comparator- to implemet our own sorting techniques
+#### 06/08
 
-06/08
+### Treeset details
+- How to add string buffer objects in to treeset
+- We need to use toString Method to convert String buffer to String while comparing.
+- If we are defining our own objects by comparator then the objects need not to be comparable.
+#### 06/10
+- If we are depending on default natural sorting order then the objects should be homogeneous and comparable else will get classcastexception
+- If we are defining our own natural sorting order then the objects can be non comparable and heterogeneous as well
+#### 06/13
+### Difference between Comparable and Comparator Interface
+- For predefined comparable classes, default sorting is already available, if we are not satisfied with the default sorting order then we can for comparator.
+- For predefined non comparable classes like String Buffer  default natural sorting is not available, hence comparator should be used.
+- Consider an own class, the person who is going to write the functionality of the class is responsible for writing the logic for default natural sorting order.
+- If the person who is going to use this class is not satisfied by this default natural sorting order then that person should implement   sorting order based on the requirement using comparator.
 
-Treeset details -
+Comparable | Comparator
+--------------------------------------------------------------|----------------------------------------------------
+Default natural sorting order | Meant for customised sorting order
+Present in java.lang | Present in java.util
+Only one methid present ```compareTo()``` | Methods present are ```compare() , equals()```
+Implemented classes are All wrapper classes and String | Implemented classes are Collator and Rule Based Collators
 
+### Map
+- Map 
+- HashMap    
+- Linked HashMap(1.4)
+- IdentityHashMap(1.4)
+- WeakHashMap
+- SortedMap
+- NavigableMap(1.6)
+- TreeMap
+- Remaining all in the version 1.2
+- We have Hashtable concepts in Map, Hashtable comes from Dictionary and implementation class of Hashtable is Properties(All are legacy classes)
+### Map
+> Map is not interface of collection
+- If we want any group of objects as key value pairs then we go for Map concept
+- Each key value pair is called Entry, hence map is a collection of entry objects
 
-How to add string buffer objects in to treeset
+### Map Interface Methods
 
-We need to use toString Method to convert String buffer to String while comparing.
-
-If we are defining our own objects by comparator then the objects need not to be comparable.
-
-06/10
-
-If we are depending on default natural sorting order then the objects should be homogeneous and comparable else will get classcastexception
-
-If we are defining our own natural sorting order then the objects can be non comparable and heterogeneous as well
-
-
-06/13
-
-Difference between Comparable and Comparator Interface
-
-->For predefined comparable classes, default sorting is already available, if we are not satisfied with the default sorting order then we can for comparator.
-
-->For predefined non comparable classes like String Buffer  default natural sorting is not available, hence comparator should be used.
-
-
-->Consider an own class, the person who is going to write the functionality of the class is responsible for writing the logic for default natural sorting order.
-
-  If the person who is going to use this class is not satisfied by this default natural sorting order then that person should implement   sorting order based on the requirement using comparator.
-
-Comparable 
-->Default natural sorting order
-->Present in java.lang
-->Only one methid present -compareTo()
-->Implemented classes are All wrapper classes and String
-
-Comparator
-->Meant for customised sorting order
-->Present in java.util
-->Methods present are compare() and equals()
-->Implemented classes are Collator and Rule Based Collators
-
-# Map
-
-Map 
-HashMap    
-Linked HashMap(1.4)
-IdentityHashMap(1.4)
-WeakHashMap
-SortedMap
-NavigableMap(1.6)
-TreeMap
-
-Remaining all in the version 1.2
-
-We have Hashtable concepts in Map, Hashtable comes from Dictionary and implementation class of Hashtable is Properties(All are legacy classes)
-
-Map-
-
-Map is not interface of collection
-
-If we want any group of objects as key value pairs then we go for Map concept
-
-Each key value pair is called Entry, hence map is a collection of entry objects
-
-# Map Interface Methods
-
- put method used in Map
-
+- put method used in Map
+```
 object put(Object key, Object value)
-
-1.)To add one key value pair to the mail
-2.)If the key is already present, them old value will be replaced with new value and returns old value.
-
+```
+1. To add one key value pair to the mail
+2. If the key is already present, them old value will be replaced with new value and returns old value.
+```
 m.put(101, "Durga")
 m.put(102, "Shiva")
 m.put(101, "Ravi")
-
-Now Durga will be replaced with Ravi
-
-
-->void putAll(Map m) - To add group of key value pairs
-->Object get(Object key) - return the value associated with specified key
-->Object.remove(Object key) - removes the entry associated with specified key
-->boolean containsKey(Object key)
+```
+- Now Durga will be replaced with Ravi
+```
+void putAll(Map m) // To add group of key value pairs
+Object get(Object key) // return the value associated with specified key
+Object.remove(Object key) // removes the entry associated with specified key
+boolean containsKey(Object key)
 boolean containsValue(Object value)
 boolean isEmpty()
 int size()
 void clear();
-
-
-
-Set KeySet() - to return only keys and keys wont be duplicate
-Collection values() -values of that particular keys
-set entrySet() - to obtain set of entries.
-
-The above three methods are considered as Collection view of Map since we are applying on a map but retrieving a collection
-
-
-Entry Interface
-
-A map is a group of key value pairs and each key value pair is called as an entry
-
-Hence Map is considered as a collection of entry objects 
-
-without existing the map object  there is no chance of existing entry object
-
-Hence Entry interface is defined inside Map Interface
-
-
+Set KeySet() // to return only keys and keys wont be duplicate
+Collection values() //values of that particular keys
+set entrySet() //to obtain set of entries.
+```
+- The above three methods are considered as Collection view of Map since we are applying on a map but retrieving a collection
+### Entry Interface
+- A map is a group of key value pairs and each key value pair is called as an entry
+- Hence Map is considered as a collection of entry objects 
+- without existing the map object  there is no chance of existing entry object
+- Hence Entry interface is defined inside Map Interface
+```
 interface Map
 {
 interface entry
@@ -701,83 +598,54 @@ Object getValue()
 Object setValue(Object newO)
 }
 }
+```
+- The above three methods are entry specific and can be applied on Entry object
 
-The above three methods are entry specific and can be applied on Entry object
-
-
-# HashMap
-
-1.Underlying data structure -Hashmap
-2.Insertion order is not preserved and it is based on Hashcode of Keys
-3.Duplicate Keys are not alloed, but values can be duplicate.
-4.Heterogeneous objects are allowed for both key and value.
-5.Null insertion is allowed for key that too only once, but allowed as many times for values
-6.Hashmap implements serializable and cloneable interfaces but not Random Access
-7.Hashmap is the best choice if the frequent operation is searching
-
-
-Constructors
-
-Hashmap m = new HashMap() initial capacity 16 and loadfactor -0.75
-
+### HashMap
+- Underlying data structure -Hashmap
+- Insertion order is not preserved and it is based on Hashcode of Keys
+- Duplicate Keys are not alloed, but values can be duplicate.
+- Heterogeneous objects are allowed for both key and value.
+- Null insertion is allowed for key that too only once, but allowed as many times for values
+- Hashmap implements serializable and cloneable interfaces but not Random Access
+- Hashmap is the best choice if the frequent operation is searching
+### Constructors
+```
+Hashmap m = new HashMap() // initial capacity 16 and loadfactor -0.75
 Hashmap m = new HashMap( int initialcapacity)
-
 Hashmap m = new HashMap(int initialcapacity float loadfactor)
-
-HashMap m = new HashMap(Map m) - to convert any map object to Hashmap
-
-
-Differences between HashMap and HashTable
-
-
-HashMap - Every method present in HashMap is not synchronised, not threadsafe, performance is high, null  key and values allowed, introduced in version 1.2
-
-HashTable - synchronised, threadsafe, performance is low, null concept n/a, legacy class(1.0V)
-
-
-How to get synchronised version of HashMap object
-
-
-By default  HashMap is non synchronised, but  we can get synchronised version of HashMap by using synchronisedMap method of Collections Class
-
+HashMap m = new HashMap(Map m) // to convert any map object to Hashmap
+```
+### Differences between HashMap and HashTable
+- HashMap - Every method present in HashMap is not synchronised, not threadsafe, performance is high, null  key and values allowed, introduced in version 1.2
+- HashTable - synchronised, threadsafe, performance is low, null concept n/a, legacy class(1.0V)
+- How to get synchronised version of HashMap object
+- By default  HashMap is non synchronised, but  we can get synchronised version of HashMap by using synchronisedMap method of Collections Class
+```
 Hashmap m = new HashMap()
-
 Map m1 = Collections.synchronisedMap(m);
-
-m is non synchronised amd m1 is synchrnised.
-
-
-06/16
-
-LinkedHashMap -child class of HashMap, exactly same as HashMap(including methods and constructors)
-
-LinkedHashMap - Underlying data structure is LinkedList and HashTable, Insertion order is preserved, introduced in 1.4V
-HashMap -Underlying data structure is Hashtable, Insertion order is not preserved and is based on hashcode of Keys, introduced in 1.2V
-
-LinkedHasSet and LinkedHashMap are commonly used for developing Cache based applications.
-
-
-Difference between == and .equals()
-
-In general == operator meant for reference comparision(address comparision) where as .equals() method meant for content comparision
-
-
+//m is non synchronised amd m1 is synchrnised.
+```
+#### 06/16
+- LinkedHashMap -child class of HashMap, exactly same as HashMap(including methods and constructors)
+- LinkedHashMap - Underlying data structure is LinkedList and HashTable, Insertion order is preserved, introduced in 1.4V
+- HashMap -Underlying data structure is Hashtable, Insertion order is not preserved and is based on hashcode of Keys, introduced in 1.2V
+- LinkedHasSet and LinkedHashMap are commonly used for developing Cache based applications.
+- Difference between == and .equals()
+	- In general == operator meant for reference comparision(address comparision) where as .equals() method meant for content comparision
+```
 Interger I1 = new Integer(10);
 Integer I2 = new Integer(10);
 S.O.P(I1 ==I2) //false  I1->10, I2->10
 S.O.P(I1.equals(I2)); //true    content is same
+```
+### IdentityHashMap -
+- It is exactly same as HashMap(including methods and constructors) except the follwoing difference
+- In the case of normal HashMap JVM will use .equals() method to identify the dupilcate keys, which is meant for content comparision.
+- But in the case of IdentityHashMap JVM will use == operator to identify the duplicate keys which is meant for reference comparision(address comparision)
 
-# IdentityHashMap -
-
-It is exactly same as HashMap(including methods and constructors) except the follwoing difference
-
-In the case of normal HashMap JVM will use .equals() method to identify the dupilcate keys, which is meant for content comparision.
-
-But in the case of IdentityHashMap JVM will use == operator to identify the duplicate keys which is meant for reference comparision(address comparision)
-
-
-Example
-
+### Example
+```
 HashMap m = new HashMap()
 Integer i1= new Integer(10);
 Integer i2 = new Integer(10);
@@ -785,46 +653,30 @@ Integer i2 = new Integer(10);
 m.put(i1, "Test");
 m.put(i2, "Example);
 s.o.p(m)
+```
+- The output we get here us {10= example} since the JVM uses .equals method to find the duplicate keys and the value will be replaced with new value.
+- but if we use LinkedHashMap we will get as {10= Test, 10= Example} //i1==i2 return false
+### WeakHashMap
+- Just before destroying an object garbage collector calls finalize method to do the clean up activities
+- It is exactly same as HashMap except the following difference
+- In the case of HashMap, eventhought the object doesn't have any reference it is not eligible for GC if it is associated with the HashMap i.e HashMap dominates garbage collector
+- but in the case of weakHashMap, if the object doesn't contain any references it is eligible gc eventhough object associated with WeakHashMap i.e gc dominates weakhashMap.
 
-The output we get here us {10= example} since the JVM uses .equals method to find the duplicate keys and the value will be replaced with new value.
-
-but if we use LinkedHashMap we will get as {10= Test, 10= Example} //i1==i2 return false
-
-
-# WeakHashMap
-
-Just before destroying an object garbage collector calls finalize method to do the clean up activities
-
-It is exactly same as HashMap except the following difference
-
-In the case of HashMap, eventhought the object doesn't have any reference it is not eligible for GC if it is associated with the HashMap
-
-i.e HashMap dominates garbage collector
-
-but in the case of weakHashMap, if the object doesn't contain any references it is eligible gc eventhough object associated with WeakHashMap
-
-i.e gc dominates weakhashMap
-
-06/17
-
-SortedMap
-
-It is the child interface of Map, if we want to represent a group of key value pairs according to some sorting order of keys then we should go for SortedMap
-
-Sorting is based on key but not based on value
-
-Sorted  map defines the following specific methods
-
+#### 06/17
+### SortedMap
+- It is the child interface of Map, if we want to represent a group of key value pairs according to some sorting order of keys then we should go for SortedMap
+- Sorting is based on key but not based on value
+- Sorted  map defines the following specific methods
+```
 Object firstKey();
 Object lastKey()
 SortedMap headMap(Object key);
 SortedMap tailMap(Object key);
 sortedMap subMap(Object key1, Object key2);
 Comparator comparator();
-
-
-Example -
-
+```
+#### Example 
+```
 101->A
 103->B
 104->C
@@ -832,114 +684,82 @@ Example -
 125->E
 136->F
 
-
 Object firstKey();-101
 Object lastKey(); -136
 SortedMap headMap(107);-{101=A,103=B,104=C}
 SortedMap tailMap(107);{107=D125=E,136=F}
 sortedMap subMap(104, 136};{104=C,107=D,125=E}
 Comparator comparator();
+```
+### TreeMap
+- Underlying data structure is red black tree
+- Insertion is not preserved and it is based on some sorting order of keys
+- Duplicate keys are not allowed, but values can be duplicated.
+- If we are depending on default natural sorting order then keys should be homogeneous and comparable, otherwise we will get runtimeexception mentioning ClassCastException.
+- If we are defining our own sorting by comparator then keys need not be homogeneous and comparable, we can take heterogeneous non comparable objects also
+- Whether we are default natural sorting order or customised sorting order values have no restriction, we can take non comparable heterogeneous objects also
 
-TreeMap-
+### Null acceptance
+- For non empty tree map if we are trying to insert an entry with null key then we will get Run time exception saying NPE
+- For an empty tree map, as the first entry with null key is allowed but after inserting that entry if we are trying to insert any other entry then we will get run time exception saying NPE
+> The above null acceptance rule applicable until 1.6V only from 1.7 version onwards null is not allowed for key. but for values we can use null any no.of times, there is no restriction whether it is 1.6V or 1.7V
 
-->Underlying data structure is red black tree
-->Insertion is not preserved and it is based on some sorting order of keys
-->Duplicate keys are not allowed, but values can be duplicated.
-->If we are depending on default natural sorting order then keys should be homogeneous and comparable, otherwise we will get runtimeexception mentioning ClassCastException.
-->If we are defining our own sorting by comparator then keys need not be homogeneous and comparable, we can take heterogeneous non comparable objects also
-->Whether we are default natural sorting order or customised sorting order values have no restriction, we can take non comparable heterogeneous objects also
-
-Null acceptance
-
-1.For non empty tree map if we are trying to insert an entry with null key then we will get Run time exception saying NPE
-2.For an empty tree map, as the first entry with null key is allowed but after inserting that entry if we are trying to insert any other entry then we will get run time exception saying NPE
-# Note 
-The above null acceptance rule applicable until 1.6V only from 1.7 version onwards null is not allowed for key.
-
-but for values we can use null any no.of times, there is no restriction whether it is 1.6V or 1.7V
-
-Constructors
-
-TreeMap t = new TreeMap() = inserts elements in to the map based on the default sorting order of the keys
-TreeMap t = new TreeMap(Comparator c) - this is used for customised sorting order based on the comparator object we pass sorting will be done
-TreeMap t = new TreeMap(SortedMap m)- to convert sorted map to TreeMap
-TreeMap t = new TreeMap(Map m) -to convert any map object to TreeMap
-
-06/18
-
-Hashtable
-
-Constructors 
-
-Hashtable h = new Hashtable()-creates an empty hashtable object with default initial capacity 11 and default fill ratio 0.75
+### Constructors
+```
+TreeMap t = new TreeMap() // inserts elements in to the map based on the default sorting order of the keys
+TreeMap t = new TreeMap(Comparator c) // this is used for customised sorting order based on the comparator object we pass sorting will be done
+TreeMap t = new TreeMap(SortedMap m) // to convert sorted map to TreeMap
+TreeMap t = new TreeMap(Map m) //to convert any map object to TreeMap
+```
+#### 06/18
+### Hashtable
+### Constructors 
+```
+Hashtable h = new Hashtable() //creates an empty hashtable object with default initial capacity 11 and default fill ratio 0.75
 Hashtable h = new Hashtable(int initialcapacity)
 Hashtable h = new Hashtable(int initialcapacity float fillratio);
-Hashtable h = new Hashtable(Map m) interconversion between map objects
+Hashtable h = new Hashtable(Map m) //interconversion between map objects
+```
+#### 06/19
+- In Hashtable values will set based on hashcode
+- the way on ehivh the output we get is from top to bottom and if the bucket contains more values then the printing order is from right to left
+- Refer the images in Info folder for further clarification
 
-06/19
-
-In Hashtable values will set based on hashcode
-
-the way on ehivh the output we get is from top to bottom and if the bucket contains more values then the printing order is from right to left
-Refer the images in Info folder for further clarification
-
-# Properties
-
-In our program if anything which changes frequently like username , password, mailid, mobe number etc are  ot recommended to hardcode in java program because if there is any change, to reflect that change recompilation, rebuild, redeploy application are required even sometimes server restart also required which creates a big business impact to the client
-
-We can overcome this problem by using the properties file, such type of variable things we have to configure in the properties file
-
-From that properties file we have to read in to Java program and we can use those properties.
-
-The main advantage of this approach is if there is a change in properties file to reflect that change just redloyment is enough which wont create any business impact to the client
-
-We can use java properties object to hold properties which are coming from properties file
-
-In normal map like HashMap HashTable TreeMap key and value can be any type, but in the case of properties key and value should be string typr "only".
-
-Constructor
-
+### Properties
+- In our program if anything which changes frequently like username , password, mailid, mobe number etc are  ot recommended to hardcode in java program because if there is any change, to reflect that change recompilation, rebuild, redeploy application are required even sometimes server restart also required which creates a big business impact to the client
+- We can overcome this problem by using the properties file, such type of variable things we have to configure in the properties file
+- From that properties file we have to read in to Java program and we can use those properties.
+- The main advantage of this approach is if there is a change in properties file to reflect that change just redloyment is enough which wont create any business impact to the client
+- We can use java properties object to hold properties which are coming from properties file
+- In normal map like HashMap HashTable TreeMap key and value can be any type, but in the case of properties key and value should be string typr "only".
+### Constructor
+```
 Properties p = new Properties();
+```
+### Methods
+```
+String setProperty(String pname, String pvalue) // to set a new property
+//If the specified property already available then the old value will be replaced with new value and returns old value
+String getProperty(String pname) // to get the vlaue associated with specified property
+//If the specified property then the above method returns null
+Enumeration propertynames() // returns all property names present in Properties object
+```
 
-Methods
-
-String setProperty(String pname, String pvalue) - to set a new property
-
-If the specified property already available then the old value will be replaced with new value and returns old value
-
-String getProperty(String pname) - to get the vlaue associated with specified property
-
-If the specified property then the above method returns null
-
-Enumeration propertynames() - returns all property names present in Properties object
-
-
-2 another methods
-
-voild load(InputStream is) -to laod the properties from the properties file in to java properties object
-
-void store(OutputStream os , String comment) - to store properties from java properties object to properties file.
-
-# Queue
-
-1.5 Version enhancements(Queue interface)
-
-It is the child interface of Collection
-
-Queue -priorityqueue and blocking queue
-
-blocking queue is again divided into priorityblockingqueue and linkedblockingqueue
-
-If we want to represent a group of individual objects prior to processing then we should go for queue.
-
-For example before sending a sms message all mobile numbers should be stored in some data structure, in which order we added mobile numbers in the same order only message should be sent.for this fifo requirement queue is the best choice
-
-Usually queue follows first on first out order but based on our rewuirement we can implement our own priority order also(priority queue)
-
-from 1.5v onwards linked list class also implements Queue Interface.
-
-linkedlist based implementation of queue always follows fifo order
-
+### 2 another methods
+```
+voild load(InputStream is) //to laod the properties from the properties file in to java properties object
+void store(OutputStream os , String comment) //to store properties from java properties object to properties file.
+```
+### Queue
+- 1.5 Version enhancements(Queue interface)
+- It is the child interface of Collection
+### Queue -priorityqueue and blocking queue
+- blocking queue is again divided into priorityblockingqueue and linkedblockingqueue
+- If we want to represent a group of individual objects prior to processing then we should go for queue.
+- For example before sending a sms message all mobile numbers should be stored in some data structure, in which order we added mobile numbers in the same order only message should be sent.for this fifo requirement queue is the best choice
+- Usually queue follows first on first out order but based on our rewuirement we can implement our own priority order also(priority queue)
+- from 1.5v onwards linked list class also implements Queue Interface.
+- linkedlist based implementation of queue always follows fifo order
 
 ### Queue interface specific methods
 ```
@@ -1053,186 +873,4 @@ public static int binarySearch(Object[] p, Object target, Comparator c)
 - By using array reference if we perform any change automatically that change will be reflected to the list similarly by using list reference if we perform any change that change will be reflected automatically to the array
 - By using list reference we cant perform any operation which varies the size otherwise we will get runtime expection saying UnsupportedOperationException
 - By using list reference we are not allowed  to replace with heterogeneous objects otherwise we will get runtime exception saying ArrayStoreException
-
-                                        ## End of Collections
--------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
- 
- 
- 
- 
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
+					######End of Collections
