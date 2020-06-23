@@ -872,5 +872,6 @@ public static int binarySearch(Object[] p, Object target, Comparator c)
 - For the existing array we are getting list view
 - By using array reference if we perform any change automatically that change will be reflected to the list similarly by using list reference if we perform any change that change will be reflected automatically to the array
 - By using list reference we cant perform any operation which varies the size otherwise we will get runtime expection saying UnsupportedOperationException
-- By using list reference we are not allowed  to replace with heterogeneous objects otherwise we will get runtime exception saying ArrayStoreException
-					###### End of Collections
+- By using list reference we are not allowed  to replace with heterogeneous objects otherwise we will get runtime exception saying ArrayStoreException.
+
+-------------------------------------------------------------END-----------------------------------------------------------------
